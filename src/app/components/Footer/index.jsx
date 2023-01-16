@@ -11,70 +11,70 @@ import Text from '../Text';
 import theme from '../../styles/theme/theme';
 import FadeUp from '../FadeUp';
 import Link from 'next/link'
-import { PARAMS } from '../../screens/Bisnis/schema';
+// import { PARAMS } from '../../screens/Bisnis/schema';
 import useIsMobile from '../../hooks/useIsMobile';
 
-const shortcuts = [
-  {
-    page: "Beranda",
-    links: [
-      {
-        section: "Anagata",
-        url: "/#anagata"
-      },
-      {
-        section: "Bisnis",
-        url: "/#bisnis"
-      },
-      {
-        section: "Klien Kami",
-        url: "/#klien"
-      }
-    ]
-  },
-  {
-    page: "Tentang",
-    links: [
-      {
-        section: "Tentang Kami",
-        url: "/tentang/#tentang-kami"
-      },
-      {
-        section: "Fokus Kami",
-        url: "/tentang/#fokus-kami"
-      },
-    ]
-  },
-  {
-    page: "Bisnis",
-    links: [
-      {
-        section: "Security System",
-        url: `/bisnis?section=${PARAMS.SECURITY_SYSTEM.key}`
-      },
-      {
-        section: "Audio Visual",
-        url: `/bisnis?section=${PARAMS.AUDIO_VISUAL.key}`
-      },
-      {
-        section: "Telecommunication",
-        url: `/bisnis?section=${PARAMS.TELECOMMUNICATION.key}`
-      },
-      {
-        section: "Air Conditioning System",
-        url: `/bisnis?section=${PARAMS.AIR_CONDITIONING.key}`
-      },
-      {
-        section: "Integrated System",
-        url: `/bisnis?section=${PARAMS.INTEGRATED_SYSTEM.key}`
-      },
-      {
-        section: "Maintenance Service",
-        url: `/bisnis?section=${PARAMS.MAINTENANCE.key}`
-      },
-    ]
-  },
-]
+// const shortcuts = [
+//   {
+//     page: "Beranda",
+//     links: [
+//       {
+//         section: "Anagata",
+//         url: "/#anagata"
+//       },
+//       {
+//         section: "Bisnis",
+//         url: "/#bisnis"
+//       },
+//       {
+//         section: "Klien Kami",
+//         url: "/#klien"
+//       }
+//     ]
+//   },
+//   {
+//     page: "Tentang",
+//     links: [
+//       {
+//         section: "Tentang Kami",
+//         url: "/tentang/#tentang-kami"
+//       },
+//       {
+//         section: "Fokus Kami",
+//         url: "/tentang/#fokus-kami"
+//       },
+//     ]
+//   },
+//   {
+//     page: "Bisnis",
+//     links: [
+//       {
+//         section: "Security System",
+//         url: `/bisnis?section=${PARAMS.SECURITY_SYSTEM.key}`
+//       },
+//       {
+//         section: "Audio Visual",
+//         url: `/bisnis?section=${PARAMS.AUDIO_VISUAL.key}`
+//       },
+//       {
+//         section: "Telecommunication",
+//         url: `/bisnis?section=${PARAMS.TELECOMMUNICATION.key}`
+//       },
+//       {
+//         section: "Air Conditioning System",
+//         url: `/bisnis?section=${PARAMS.AIR_CONDITIONING.key}`
+//       },
+//       {
+//         section: "Integrated System",
+//         url: `/bisnis?section=${PARAMS.INTEGRATED_SYSTEM.key}`
+//       },
+//       {
+//         section: "Maintenance Service",
+//         url: `/bisnis?section=${PARAMS.MAINTENANCE.key}`
+//       },
+//     ]
+//   },
+// ]
 const Footer = () => {
   const isMobile = useIsMobile();
   
@@ -93,7 +93,7 @@ const Footer = () => {
             </Text>
           </Box>
           <ShortcutContainer>
-            {
+            {/* {
               shortcuts.map((el, idx) => (
                 <Box maxWidth="370px" key={idx}>
                   <Text variant="h3" sx={{ color: theme.palette.white[50] }}>
@@ -118,7 +118,7 @@ const Footer = () => {
                   }
                 </Box>
               ))
-            }
+            } */}
           </ShortcutContainer>
         </InformationBox>
       </FadeUp>

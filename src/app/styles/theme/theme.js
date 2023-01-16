@@ -29,9 +29,37 @@ const theme = createTheme(baseTheme, {
     MuiCssBaseline: {
       styleOverrides: `
         @font-face {
-          font-family: Jost, sans-serif;
-          src: url('https://fonts.googleapis.com/css2?family=Jost:wght@700&display=swap');
+          font-family: "Montserrat";
+          src: url('/fonts/Montserrat-SemiBold.ttf');
+          font-style: normal;
+          font-weight: 500;
+          font-display: swap;
+        }
+        @font-face {
+          font-family: "Montserrat";
+          src: url('/fonts/Montserrat-Bold.ttf');
+          font-style: normal;
+          font-weight: 600;
+          font-display: swap;
+        }
+        @font-face {
+          font-family: "Hind";
+          src: url('/fonts/Hind-Regular.ttf');
           font-weight: 400;
+          font-style: normal;
+          font-display: swap;
+        }
+        @font-face {
+          font-family: "Hind";
+          src: url('/fonts/Hind-Medium.ttf');
+          font-weight: 500;
+          font-style: normal;
+          font-display: swap;
+        }
+        @font-face {
+          font-family: "Hind";
+          src: url('/fonts/Hind-SemiBold.ttf');
+          font-weight: 600;
           font-style: normal;
           font-display: swap;
         }

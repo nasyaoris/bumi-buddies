@@ -20,7 +20,7 @@ import Link from 'next/link'
 import theme from '../../styles/theme/theme';
 import { useRouter } from "next/router";
 import useIsMobile from '../../hooks/useIsMobile';
-import { navItems } from "./schema"
+// import { navItems } from "./schema"
 import dynamic from "next/dynamic";
 
 const Animation = dynamic(() => import('../Animation'), { ssr: false });
@@ -44,7 +44,7 @@ const Navbar = (props) => {
       </Box>
       <Divider />
       <List>
-        {navItems.map((item) => (
+        {/* {navItems?.map((item) => (
           <ListItem 
             key={item} 
             disablePadding 
@@ -65,7 +65,6 @@ const Navbar = (props) => {
                     <List>
                     <Animation style={{ position: "absolute", zIndex: 0, display: "flex",
                         justifyContent: "center", alignItems: "center", left: 10 }}>
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src="/images/logobaru_opacity.png"
                           alt="logoOpacity"
@@ -88,7 +87,7 @@ const Navbar = (props) => {
                 )
               }
           </ListItem>
-        ))}
+        ))} */}
       </List>
     </Box>
   );

@@ -4,111 +4,97 @@ export const pxToRem = (px, decimalPlaces) => {
 };
 
 export const Typography = {
-  h1: {
+  nominal: {
     fontWeight: 600,
     fontSize: pxToRem(64),
-    fontFamily: "Jost, sans-serif;",
+    fontFamily: "'Montserrat', sans-serif",
     lineHeight: pxToRem(77),
     '@media (max-width:600px)': {
       fontSize: '32px',
     },
   },
-  h2: {
+  headingLarge: {
     fontWeight: 600,
+    fontSize: pxToRem(48),
+    fontFamily: "'Montserrat', sans-serif",
+    lineHeight: pxToRem(58),
+    '@media (max-width:600px)': {
+      fontSize: '16px',
+    },
+  },
+  headingBig: {
+    fontWeight: 600,
+    fontWeightMedium: 500,
     fontSize: pxToRem(32),
-    fontFamily: "Jost, sans-serif;",
-    lineHeight: pxToRem(38),
-    '@media (max-width:600px)': {
-      fontSize: '16px',
-    },
-  },
-  h3: {
-    fontWeight: 600,
-    fontSize: pxToRem(22),
-    fontFamily: "Jost, sans-serif;",
-    lineHeight: pxToRem(26),
+
+    fontFamily: "'Montserrat', sans-serif",
+    lineHeight: pxToRem(39),
     '@media (max-width:600px)': {
       fontSize: '14px',
     },
   },
-  h4Small: {
-    fontWeight: 600,
-    fontSize: pxToRem(18),
-    fontFamily: "Jost, sans-serif;",
-    lineHeight: pxToRem(22),
+  headingMedium: {
+    fontWeight: "600",
+    fontSize: pxToRem(24),
+    fontFamily: "'Montserrat', sans-serif",
+    lineHeight: pxToRem(29),
     '@media (max-width:600px)': {
       fontSize: '14px',
     },
   },
-  h4ExtraSmall: {
+  headingSmall: {
     fontWeight: 600,
     fontSize: pxToRem(18),
-    fontFamily: "Jost, sans-serif;",
+    fontFamily: "'Montserrat', sans-serif",
     lineHeight: pxToRem(22),
   },
-  h1Anagata: {
-    fontWeight: 600,
-    fontSize: pxToRem(64),
-    fontFamily: "Roboto",
-    lineHeight: pxToRem(77),
-    '@media (max-width:600px)': {
-      fontSize: '32px',
-      lineHeight: pxToRem(60),
-    },
+  subheadingLarge: {
+    fontWeight: "500",
+    fontSize: pxToRem(24),
+    fontFamily: "Montserrat, sans-serif",
+    lineHeight: pxToRem(29),
   },
-  anagataRegulerLarge: {
-    fontWeight: 400,
-    fontSize: pxToRem(22),
-    fontFamily: "Roboto",
-    lineHeight: pxToRem(26),
-    '@media (max-width:600px)': {
-      fontSize: '16px',
-    },
+  subheadingMedium: {
+    fontWeight: 500,
+    fontSize: pxToRem(18),
+    fontFamily: "'Montserrat', sans-serif",
+    lineHeight: pxToRem(22),
   },
-  anagataLightLarge: {
-    fontWeight: 300,
-    fontSize: pxToRem(22),
-    fontFamily: "Roboto",
-    lineHeight: pxToRem(26),
-    '@media (max-width:600px)': {
-      fontSize: '16px',
-    },
+  subheadingSmall: {
+    fontWeight: 500,
+    fontSize: pxToRem(14),
+    fontFamily: "'Montserrat', sans-serif",
+    lineHeight: pxToRem(17),
   },
-  anagataRegulerMedium: {
+  bodyLarge: {
     fontWeight: 400,
     fontSize: pxToRem(18),
-    fontFamily: "Roboto",
-    lineHeight: pxToRem(27),
-    '@media (max-width:600px)': {
-      fontSize: '14px',
-    },
-  },
-  anagataLightMedium: {
-    fontWeight: 300,
-    fontSize: pxToRem(18),
-    fontFamily: "Roboto",
+    fontFamily: "'Hind', sans-serif",
     lineHeight: pxToRem(22),
-    '@media (max-width:600px)': {
-      fontSize: '14px',
-    },
   },
-  anagataRegulerSmall: {
+  bodyMedium: {
     fontWeight: 400,
-    fontSize: pxToRem(16),
-    fontFamily: "Roboto",
-    lineHeight: pxToRem(22),
-    '@media (max-width:600px)': {
-      fontSize: '12px',
-    },
+    fontSize: pxToRem(14),
+    fontFamily: "'Hind', sans-serif",
+    lineHeight: pxToRem(17),
   },
-  anagataLightSmall: {
-    fontWeight: 300,
-    fontSize: pxToRem(16),
-    fontFamily: "Roboto",
-    lineHeight: pxToRem(22),
-    '@media (max-width:600px)': {
-      fontSize: '12px',
-    },
+  bodySmall: {
+    fontWeight: 400,
+    fontSize: pxToRem(12),
+    fontFamily: "'Hind', sans-serif",
+    lineHeight: pxToRem(15),
+  },
+  captionBig: {
+    fontWeight: 500,
+    fontSize: pxToRem(12),
+    fontFamily: "'Hind', sans-serif",
+    lineHeight: pxToRem(15),
+  },
+  captionSmall: {
+    fontWeight: 500,
+    fontSize: pxToRem(10),
+    fontFamily: "'Hind', sans-serif",
+    lineHeight: pxToRem(12),
   },
   button: {
     fontWeight: 600,
