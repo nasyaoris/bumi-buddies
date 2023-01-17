@@ -20,8 +20,9 @@ import Link from 'next/link'
 import theme from '../../styles/theme/theme';
 import { useRouter } from "next/router";
 import useIsMobile from '../../hooks/useIsMobile';
-// import { navItems } from "./schema"
+import { navItems } from "./schema"
 import dynamic from "next/dynamic";
+import Button from '../Button';
 
 const Animation = dynamic(() => import('../Animation'), { ssr: false });
 
@@ -39,12 +40,12 @@ const Navbar = (props) => {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "left" }}>
       <Box sx={{ padding: 1, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-      <img src="/images/New_Logo.svg" alt="logo" style={{height: "34px"}} />
+      {/* <img src="/images/New_Logo.svg" alt="logo" style={{height: "34px"}} /> */}
       <CloseIcon />
       </Box>
       <Divider />
       <List>
-        {/* {navItems?.map((item) => (
+        {navItems?.map((item) => (
           <ListItem 
             key={item} 
             disablePadding 
@@ -87,7 +88,7 @@ const Navbar = (props) => {
                 )
               }
           </ListItem>
-        ))} */}
+        ))}
       </List>
     </Box>
   );
@@ -103,7 +104,7 @@ const Navbar = (props) => {
         <Box style={{cursor: "pointer"}}>
         <Link href="/">
           <Text variant="h4" sx={{ color: theme.palette.black[50]}}>
-              <img src="/images/New_Logo.svg" alt="logo" style={{height: isMobile ? "34px" : "52px"}} />
+              {/* <img src="/images/New_Logo.svg" alt="logo" style={{height: isMobile ? "34px" : "52px"}} /> */}
           </Text>
           </Link>
         </Box>
@@ -112,24 +113,21 @@ const Navbar = (props) => {
           display: { xs: "none", md: "flex" },
         }}
         >
-          <Link href="/tentang">
-            <Text 
-              variant="anagataRegulerMedium" 
-              sx={{ color: router.pathname == "/tentang" ? theme.palette.primary.orange : theme.palette.black[50], marginRight: theme.spacing(6), cursor: "pointer"}}
-            >
-              TENTANG
-            </Text>
-          </Link>
-          <Link href="/bisnis">
-            <Text variant="anagataRegulerMedium" sx={{ color: router.pathname == "/bisnis" ? theme.palette.primary.orange : theme.palette.black[50], marginRight: theme.spacing(6), cursor: "pointer"}}>
-              BISNIS
-            </Text>
-          </Link>
-          <Link href="/kontak">
-            <Text variant="anagataRegulerMedium" sx={{ color: router.pathname == "/kontak" ? theme.palette.primary.orange : theme.palette.black[50], marginRight: theme.spacing(6), cursor: "pointer"}}>
-              KONTAK
-            </Text>
-          </Link>
+          {
+            navItems?.map((item) => (
+              <Link href={item.url}>
+                <Text 
+                  variant="bodyRegular" 
+                  sx={{ color: router.pathname == item.url ? theme.palette.primary.orange : theme.palette.black[50], marginRight: theme.spacing(6), cursor: "pointer", textDecoration: router.pathname == item.url ? "underline" : "none"}}
+                >
+                  {item.page}
+                </Text>
+              </Link>
+            ))
+          }
+          <Button style={{backgroundColor: "#B5CF50"}}>
+            <Text variant="bodyMedium">Donate</Text>
+          </Button>
         </Box>
         <IconButton
               color="inherit"
