@@ -1,4 +1,5 @@
 import { styled, Box } from "@mui/material";
+import { color, display } from "@mui/system";
 
 export const JumbotronContainer = styled(Box)(({ theme }) => ({
   position: "relative",
@@ -12,7 +13,9 @@ export const ContentContainer = styled(Box)(({ theme }) => ({
   width: "100%",
   display: "flex",
   justifyContent: "center",
-  flexDirection: "row",
+  alignItems: "center",
+  flexDirection: "column",
+  marginTop: theme.spacing(10)
 }));
 
 export const Content = styled(Box)(({ theme }) => ({
@@ -56,3 +59,42 @@ export const ClientContainer = styled(Box)(({ theme }) => ({
   alignItems: "center",
   justifyItems: "center",
 }));
+
+export const ProjectContainer = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "row",
+  gap: "42px",
+  marginBottom: "160px",
+  width: "100%",
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+    marginBottom: "54px",
+  }
+}))
+
+export const ProjectItem = styled(Box)(({ theme }) => ({
+  width: "50%",
+  [theme.breakpoints.down("sm")]: {
+    width: "100%"
+  }
+}))
+
+export const ImpactContainer = styled(Box)(({ theme }) => ({
+  width: "100%",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  backgroundColor: "#2BB8AB",
+  color: "#FFFF",
+  paddingTop: "39px",
+  paddingBottom: "39px",
+}))
+
+export const ImpactItems = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "row",
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+  }
+}))

@@ -9,6 +9,10 @@ import {
   VisionContainer,
   ServicesContainer,
   ClientContainer,
+  ProjectContainer,
+  ProjectItem,
+  ImpactContainer,
+  ImpactItems
 } from "./styles";
 import dynamic from "next/dynamic";
 import Button from "../../components/Button";
@@ -50,11 +54,11 @@ const Home = () => {
     <Box sx={{ maxWidth: {sm: "100%"}, overflow: "hidden"}}>
       {/* Jumbotron */}
       <JumbotronContainer>
-      <Animated
+      {/* <Animated
           animationIn="easeIn"
           animationOut="easeOut"
           duration={700}
-        >
+        > */}
         <Box
           sx={{
             width: "100%",
@@ -71,7 +75,7 @@ const Home = () => {
             // objectFit="cover"
           />
         </Box>
-        </Animated>
+        {/* </Animated> */}
         <Box
           sx={{
             position: "absolute",
@@ -88,18 +92,18 @@ const Home = () => {
           >
              Join our program!
           </Text> */}
-          <Animated
+          {/* <Animated
             animationIn="easeIn"
             animationOut="easeOut"
             duration={700}
-          >
+          > */}
           <Text variant="bodyLarge" style={{ color: theme.palette.white[100], fontSize: "96px" }}>
           Join our program!
           </Text>
           {/* <Text variant="h1Anagata" style={{ color: theme.palette.white[50] }}>
             {jumbotronContents[activeImage].titleTwo}
           </Text> */}
-          </Animated>
+          {/* </Animated> */}
         </Box>
         <Box sx={{ 
             position: "absolute",
@@ -121,8 +125,155 @@ const Home = () => {
           
         </Box>
       </JumbotronContainer>
-      <ContentContainer>
-      </ContentContainer>
+      <Box style={{ paddingLeft: isMobile ? "20px" : "70px", paddingRight: isMobile ? "20px" : "70px"}}>
+        <ContentContainer>
+          <Box style={{ maxWidth: "1080px"}}>
+            <Text variant="headingLarge" style={{textAlign: "center", marginBottom: "32px"}}>Title Introduction</Text>
+            <Text variant="bodyLarge" style={{textAlign: "center", color: "#111111"}}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</Text>
+          </Box>
+        </ContentContainer>
+        <Box style={{ marginTop: isMobile? "52px" : "120px"}}>
+          <ProjectContainer>
+            <ProjectItem>
+              <Text variant="headingLarge" style={{ width: isMobile ? "100%" : "50%"}}>What we do for Earth</Text>
+            </ProjectItem>
+            <ProjectItem>
+              <Text variant="bodyLarge">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an</Text>
+            </ProjectItem>
+          </ProjectContainer>
+          <ProjectContainer>
+            <ProjectItem>
+              <img src="/images/projectsample.png" alt="project_sample" style={{ width: "100%"}} />
+            </ProjectItem>
+            <ProjectItem>
+              <Box>
+                <Text variant="headingBig" style={{marginBottom: "24px"}}>YES Project</Text>
+                <Text variant="bodyLarge">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an Lorem Ipsum is simply dummy text of the printing and typesetting industry: 
+                </Text>
+                <ul>
+                  <li><Text variant="bodyLarge">Bullet point if you want</Text></li>
+                  <li><Text variant="bodyLarge">Bullet point if you want</Text></li>
+                  <li><Text variant="bodyLarge">Bullet point if you want</Text></li>
+                </ul>
+              </Box>
+            </ProjectItem>
+          </ProjectContainer>
+          <ProjectContainer style={{ flexDirection: isMobile ? "column-reverse" : "row"}}>
+            <ProjectItem>
+            <Box>
+                <Text variant="headingBig" style={{marginBottom: "24px"}}>YES Project</Text>
+                <Text variant="bodyLarge">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an Lorem Ipsum is simply dummy text of the printing and typesetting industry: 
+                </Text>
+                <ul>
+                  <li><Text variant="bodyLarge">Bullet point if you want</Text></li>
+                  <li><Text variant="bodyLarge">Bullet point if you want</Text></li>
+                  <li><Text variant="bodyLarge">Bullet point if you want</Text></li>
+                </ul>
+              </Box>
+            </ProjectItem>
+            <ProjectItem>
+            <img src="/images/projectsample.png" alt="project_sample" style={{ width: "100%"}} />
+            </ProjectItem>
+          </ProjectContainer>
+          <ProjectContainer>
+            <ProjectItem>
+              <img src="/images/projectsample.png" alt="project_sample" style={{ width: "100%"}} />
+            </ProjectItem>
+            <ProjectItem>
+              <Box>
+                <Text variant="headingBig" style={{marginBottom: "24px"}}>YES Project</Text>
+                <Text variant="bodyLarge">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an Lorem Ipsum is simply dummy text of the printing and typesetting industry: 
+                </Text>
+                <ul>
+                  <li><Text variant="bodyLarge">Bullet point if you want</Text></li>
+                  <li><Text variant="bodyLarge">Bullet point if you want</Text></li>
+                  <li><Text variant="bodyLarge">Bullet point if you want</Text></li>
+                </ul>
+              </Box>
+            </ProjectItem>
+          </ProjectContainer>
+        </Box>
+      </Box>
+      <ImpactContainer>
+        <Text variant="bodyLarge" style={{ marginBottom: "32px"}}>Impact we made together</Text>
+        <ImpactItems>
+          <Box 
+            display="flex" 
+            flexDirection="column" 
+            justifyContent="center" 
+            alignItems="center" 
+            style={{
+              border: "1px solid #FFFFFF",
+              padding: "16px 56px",
+              borderTop: "unset",
+              borderBottom: isMobile ? "1px solid #FFFFFF" : "unset",
+              borderLeft: "unset",
+              borderRight: !isMobile ? "1px solid #FFFFFF" : "unset"
+            }}
+            
+            >
+            <img src={"/images/ImpactIcon.svg"} alt="impactIcon" style={{ width: "32px"}}/>
+            <Text variant="nominal">100</Text>
+            <Text variant="bodyLarge">Seminar</Text>
+          </Box>
+          <Box 
+            display="flex" 
+            flexDirection="column" 
+            justifyContent="center" 
+            alignItems="center" 
+            
+            style={{
+              padding: "16px 56px",
+              border: "1px solid #FFFFFF",
+              borderTop: "unset",
+              borderBottom: isMobile ? "1px solid #FFFFFF" : "unset",
+              borderLeft: "unset",
+              borderRight: !isMobile ? "1px solid #FFFFFF" : "unset"
+            }}
+            
+            >
+            <img src={"/images/ImpactIcon.svg"} alt="impactIcon" style={{ width: "32px"}}/>
+            <Text variant="nominal">100</Text>
+            <Text variant="bodyLarge">Seminar</Text>
+          </Box>
+          <Box 
+            display="flex" 
+            flexDirection="column" 
+            justifyContent="center" 
+            alignItems="center" 
+            style={{
+              border: "1px solid #FFFFFF",
+              padding: "16px 56px",
+              borderTop: "unset",
+              borderBottom: isMobile ? "1px solid #FFFFFF" : "unset",
+              borderLeft: "unset",
+              borderRight: !isMobile ? "1px solid #FFFFFF" : "unset"
+            }}
+            
+            >
+            <img src={"/images/ImpactIcon.svg"} alt="impactIcon" style={{ width: "32px"}}/>
+            <Text variant="nominal">100</Text>
+            <Text variant="bodyLarge">Seminar</Text>
+          </Box>
+          <Box 
+            display="flex" 
+            flexDirection="column" 
+            justifyContent="center" 
+            alignItems="center" 
+            style={{
+              padding: "16px 56px",
+            }}
+            >
+            <img src={"/images/ImpactIcon.svg"} alt="impactIcon" style={{ width: "32px"}}/>
+            <Text variant="nominal">100</Text>
+            <Text variant="bodyLarge">Seminar</Text>
+          </Box>
+        </ImpactItems>
+      </ImpactContainer>
+ 
     </Box>
   );
 };
