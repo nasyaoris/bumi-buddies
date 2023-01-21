@@ -46,7 +46,7 @@ export const ShortcutContainer = styled(Box)(({ theme }) => ({
   marginBottom: theme.spacing(3),
   color: "#FFFFFF",
   [theme.breakpoints.down("sm")]: {
-    gridTemplateColumns: "repeat(2,1fr)",
+    gridTemplateColumns: "repeat(1,1fr)",
     marginTop: theme.spacing(2)
   }
 }));
