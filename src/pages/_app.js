@@ -12,6 +12,8 @@ import Footer from '../app/components/Footer';
 import SiteLayout from "../app/components/SiteLayout"
 import "animate.css/animate.min.css";
 import 'react-animation/dist/keyframes.css'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const clientSideEmotionCache = createEmotionCache();
 

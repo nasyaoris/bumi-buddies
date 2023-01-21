@@ -19,7 +19,7 @@ export const Typography = {
     fontFamily: "'Montserrat', sans-serif",
     lineHeight: pxToRem(58),
     '@media (max-width:600px)': {
-      fontSize: '16px',
+      fontSize: '32px',
     },
   },
   headingBig: {
@@ -30,7 +30,7 @@ export const Typography = {
     fontFamily: "'Montserrat', sans-serif",
     lineHeight: pxToRem(39),
     '@media (max-width:600px)': {
-      fontSize: '14px',
+      fontSize: '18px',
     },
   },
   headingMedium: {

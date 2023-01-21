@@ -10,6 +10,7 @@ const SiteLayout = (props) => {
       <WrapperContent>
       <Navbar />
         {props.children}
+      <Footer />
       </WrapperContent>
     </Container>
   )

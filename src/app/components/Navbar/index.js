@@ -64,14 +64,14 @@ const Navbar = (props) => {
                 item.links && (
                   <Box marginLeft={2} style={{ position: "relative"}}>
                     <List>
-                    <Animation style={{ position: "absolute", zIndex: 0, display: "flex",
+                    {/* <Animation style={{ position: "absolute", zIndex: 0, display: "flex",
                         justifyContent: "center", alignItems: "center", left: 10 }}>
                         <img
                           src="/images/logobaru_opacity.png"
                           alt="logoOpacity"
                           style={{ width: isMobile ? "300px" : "inherit"}}
                         /> 
-                      </Animation>
+                      </Animation> */}
                       {
                         item.links.map((el) => (
                           <ListItem key={el.section} disablePadding>
