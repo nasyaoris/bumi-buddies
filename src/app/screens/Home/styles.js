@@ -4,8 +4,8 @@ import { color, display } from "@mui/system";
 export const JumbotronContainer = styled(Box)(({ theme }) => ({
   position: "relative",
   height: "611px",
-  backgroundColor: "rgba(28, 28, 28, 0.6)",
-  zIndex: 2,
+  // backgroundColor: "rgba(28, 28, 28, 0.6)",
+  // zIndex: 2,
 }));
 export const ContentContainer = styled(Box)(({ theme }) => ({
   backgroundColor: "white",
@@ -98,3 +98,29 @@ export const ImpactItems = styled(Box)(({ theme }) => ({
     flexDirection: "column",
   }
 }))
+
+export const PartnerSection = styled(Box)(({ theme }) => ({
+  width: "100%",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  marginTop: "120px",
+  padding: "70px",
+  [theme.breakpoints.down("sm")]: {
+    padding: "20px",
+    marginTop: "44px",
+  }
+}))
+
+
+export const PartnerContainer = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "row",
+  gap: "39px",
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+  }
+}))
+
+
