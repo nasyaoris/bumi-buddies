@@ -610,19 +610,6 @@ const Home = () => {
                     </span>
                     . We have simplified stuff for you in our compact but
                     extensive course.
-                    {/* <span
-                      style={{
-                        color: theme.palette.blue[200],
-                        fontWeight: "600",
-                      }}
-                    >
-                      online visits to conduct an interactive learning session
-                      with students
-                    </span>
-                    . We offer a variety of topics to choose from, climate
-                    change to sustainable lifestyle. This comes with a
-                    post-session activity where students can implement what they
-                    have learnt. */}
                   </Text>
                   <Text
                     variant="bodyLarge"
@@ -646,17 +633,6 @@ const Home = () => {
                   >
                     <Text variant="bodyMedium">Contact Us</Text>
                   </Button>
-                  {/* <ul>
-                    <li>
-                      <Text variant="bodyLarge">Bullet point if you want</Text>
-                    </li>
-                    <li>
-                      <Text variant="bodyLarge">Bullet point if you want</Text>
-                    </li>
-                    <li>
-                      <Text variant="bodyLarge">Bullet point if you want</Text>
-                    </li>
-                  </ul> */}
                 </Box>
               </Box>
             </ProjectItem>
