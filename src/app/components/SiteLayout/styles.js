@@ -5,7 +5,7 @@ export const Container = styled(Box)(({ theme }) => ({
   width: "100vw",
   height: "100vh",
   justifyContent: "center",
-}))
+}));
 
 export const WrapperContent = styled(Box)(({ theme }) => ({
   maxWidth: "1440px",
