@@ -7,19 +7,20 @@ export const Typography = {
   nominal: {
     fontWeight: 600,
     fontSize: pxToRem(64),
-    fontFamily: "'Montserrat', sans-serif",
+    fontFamily: "'Hind', sans-serif",
     lineHeight: pxToRem(77),
-    '@media (max-width:600px)': {
-      fontSize: '32px',
+    "@media (max-width:700px)": {
+      lineHeight: pxToRem(24),
+      fontSize: "32px",
     },
   },
   headingLarge: {
-    fontWeight: 600,
+    fontWeight: 900,
     fontSize: pxToRem(48),
-    fontFamily: "'Montserrat', sans-serif",
+    fontFamily: "'Hind', sans-serif",
     lineHeight: pxToRem(58),
-    '@media (max-width:600px)': {
-      fontSize: '32px',
+    "@media (max-width:600px)": {
+      fontSize: "24px",
     },
   },
   headingBig: {
@@ -27,43 +28,60 @@ export const Typography = {
     fontWeightMedium: 500,
     fontSize: pxToRem(32),
 
-    fontFamily: "'Montserrat', sans-serif",
+    fontFamily: "'Hind', sans-serif",
     lineHeight: pxToRem(39),
-    '@media (max-width:600px)': {
-      fontSize: '18px',
+    "@media (max-width:600px)": {
+      fontSize: "18px",
+    },
+  },
+  headingThin: {
+    fontWeight: 400,
+    fontWeightMedium: 500,
+    fontSize: pxToRem(32),
+
+    fontFamily: "'Hind', sans-serif",
+    lineHeight: pxToRem(39),
+    "@media (max-width:600px)": {
+      fontSize: "18px",
     },
   },
   headingMedium: {
     fontWeight: "600",
     fontSize: pxToRem(24),
-    fontFamily: "'Montserrat', sans-serif",
+    fontFamily: "'Hind', sans-serif",
     lineHeight: pxToRem(29),
-    '@media (max-width:600px)': {
-      fontSize: '14px',
+    "@media (max-width:600px)": {
+      fontSize: "14px",
     },
   },
   headingSmall: {
     fontWeight: 600,
     fontSize: pxToRem(18),
-    fontFamily: "'Montserrat', sans-serif",
+    fontFamily: "'Hind', sans-serif",
     lineHeight: pxToRem(22),
   },
   subheadingLarge: {
     fontWeight: "500",
     fontSize: pxToRem(24),
-    fontFamily: "Montserrat, sans-serif",
+    fontFamily: "Hind, sans-serif",
+    lineHeight: pxToRem(29),
+  },
+  subheadingLargeThin: {
+    fontWeight: "400",
+    fontSize: pxToRem(24),
+    fontFamily: "Hind, sans-serif",
     lineHeight: pxToRem(29),
   },
   subheadingMedium: {
     fontWeight: 500,
     fontSize: pxToRem(18),
-    fontFamily: "'Montserrat', sans-serif",
+    fontFamily: "'Hind', sans-serif",
     lineHeight: pxToRem(22),
   },
   subheadingSmall: {
     fontWeight: 500,
     fontSize: pxToRem(14),
-    fontFamily: "'Montserrat', sans-serif",
+    fontFamily: "'Hind', sans-serif",
     lineHeight: pxToRem(17),
   },
   bodyLarge: {
@@ -95,6 +113,27 @@ export const Typography = {
     fontSize: pxToRem(10),
     fontFamily: "'Hind', sans-serif",
     lineHeight: pxToRem(12),
+  },
+  sectionTitle: {
+    fontWeight: 500,
+    fontSize: pxToRem(48),
+    fontFamily: "'Bakso Sapi', sans-serif",
+    lineHeight: pxToRem(58),
+    "@media (max-width:600px)": {
+      fontSize: "32px",
+    },
+  },
+  titleMedium: {
+    fontWeight: 500,
+    fontSize: pxToRem(32),
+    fontFamily: "'Bakso Sapi', sans-serif",
+    lineHeight: pxToRem(38),
+  },
+  titleSmall: {
+    fontWeight: 500,
+    fontSize: pxToRem(18),
+    fontFamily: "'Bakso Sapi', sans-serif",
+    lineHeight: pxToRem(22),
   },
   button: {
     fontWeight: 600,

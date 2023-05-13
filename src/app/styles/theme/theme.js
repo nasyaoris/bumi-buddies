@@ -13,17 +13,20 @@ const baseTheme = createTheme({
   },
 });
 
-const { breakpoints, typography: { pxToRem } } = baseTheme;
+const {
+  breakpoints,
+  typography: { pxToRem },
+} = baseTheme;
 
 const theme = createTheme(baseTheme, {
   overrides: {
     MuiTypography: {
       h1: {
         [breakpoints.down("xs")]: {
-          fontSize: "3rem"
-        }
-      }
-    }
+          fontSize: "3rem",
+        },
+      },
+    },
   },
   components: {
     MuiCssBaseline: {
@@ -63,15 +66,22 @@ const theme = createTheme(baseTheme, {
           font-style: normal;
           font-display: swap;
         }
+        @font-face {
+          font-family: "Bakso Sapi";
+          src: url('/fonts/BaksoSapi.otf');
+          font-weight: 600;
+          font-style: normal;
+          font-display: swap;
+        }
       `,
     },
     MuiTypography: {
       h1: {
         [breakpoints.down("md")]: {
-          fontSize: "3rem"
-        }
-      }
-    }
+          fontSize: "3rem",
+        },
+      },
+    },
   },
 });
 

@@ -1,4 +1,4 @@
-import { styled, Box, } from "@mui/material";
+import { styled, Box } from "@mui/material";
 import { color, display } from "@mui/system";
 
 export const JumbotronContainer = styled(Box)(({ theme }) => ({
@@ -6,6 +6,9 @@ export const JumbotronContainer = styled(Box)(({ theme }) => ({
   height: "611px",
   backgroundColor: "rgba(28, 28, 28, 0.6)",
   zIndex: 2,
+  [theme.breakpoints.down("md")]: {
+    height: "fit-content",
+  },
 }));
 export const ContentContainer = styled(Box)(({ theme }) => ({
   backgroundColor: "white",
@@ -15,7 +18,7 @@ export const ContentContainer = styled(Box)(({ theme }) => ({
   justifyContent: "center",
   alignItems: "center",
   flexDirection: "column",
-  marginTop: theme.spacing(10)
+  marginTop: theme.spacing(10),
 }));
 
 export const Content = styled(Box)(({ theme }) => ({
@@ -31,7 +34,7 @@ export const Content = styled(Box)(({ theme }) => ({
   marginTop: "-4rem",
   [theme.breakpoints.down("md")]: {
     width: "90%",
-  }
+  },
 }));
 
 export const VisionContainer = styled(Box)(({ theme }) => ({
@@ -48,7 +51,7 @@ export const ServicesContainer = styled(Box)(({ theme }) => ({
   zIndex: 0,
   [theme.breakpoints.down("sm")]: {
     gridTemplateColumns: "repeat(2,1fr)",
-  }
+  },
 }));
 
 export const ClientContainer = styled(Box)(({ theme }) => ({
@@ -60,24 +63,25 @@ export const ClientContainer = styled(Box)(({ theme }) => ({
   justifyItems: "center",
 }));
 
-export const ProjectContainer = styled(Box)(({ theme }) => ({
-  display: "flex",
-  flexDirection: "row",
-  gap: "42px",
-  marginBottom: "160px",
-  width: "100%",
-  [theme.breakpoints.down("sm")]: {
-    flexDirection: "column",
-    marginBottom: "54px",
-  }
-}))
+export const ProjectContainer = styled(Box)(
+  ({ theme, customFlexDirection }) => ({
+    display: "flex",
+    flexDirection: "row",
+    gap: "42px",
+    marginBottom: "160px",
+    width: "100%",
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: customFlexDirection || "column",
+    },
+  })
+);
 
 export const ProjectItem = styled(Box)(({ theme }) => ({
   width: "50%",
   [theme.breakpoints.down("sm")]: {
-    width: "100%"
-  }
-}))
+    width: "100%",
+  },
+}));
 
 export const ImpactContainer = styled(Box)(({ theme }) => ({
   width: "100%",
@@ -90,19 +94,19 @@ export const ImpactContainer = styled(Box)(({ theme }) => ({
   // paddingBottom: "39px",
   height: "277px",
   borderRadius: "12px",
-  backgroundImage: 'url(/images/collab.png)',
+  backgroundImage: "url(/images/collab.png)",
   backgroundRepeat: "no-repeat",
   backgroundPosition: "right",
   marginBottom: "120px",
-}))
+}));
 
 export const ImpactItems = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "row",
   [theme.breakpoints.down("sm")]: {
     flexDirection: "column",
-  }
-}))
+  },
+}));
 
 export const PartnerSection = styled(Box)(({ theme }) => ({
   width: "100%",
@@ -115,9 +119,8 @@ export const PartnerSection = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
     padding: "20px",
     marginTop: "44px",
-  }
-}))
-
+  },
+}));
 
 export const PartnerContainer = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -125,18 +128,18 @@ export const PartnerContainer = styled(Box)(({ theme }) => ({
   gap: "39px",
   [theme.breakpoints.down("sm")]: {
     flexDirection: "column",
-  }
-}))
+  },
+}));
 
 export const CollabContainer = styled(Box)(({ theme }) => ({
-  backgroundImage: 'url(/images/collab_container.png)',
+  backgroundImage: "url(/images/collab_container.png)",
   backgroundRepeat: "no-repeat",
   height: "100%",
   display: "flex",
   flexDirection: "column",
   gap: theme.spacing(1),
-  padding: theme.spacing(6)
-}))
+  padding: theme.spacing(6),
+}));
 
 export const CollabContainerMobile = styled(Box)(({ theme }) => ({
   height: "100%",
@@ -147,6 +150,4 @@ export const CollabContainerMobile = styled(Box)(({ theme }) => ({
   background: "#B5CF50",
   borderRadius: "12px",
   marginBottom: "120px",
-}))
-
-
+}));
