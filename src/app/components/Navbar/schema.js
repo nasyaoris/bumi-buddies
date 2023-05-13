@@ -1,13 +1,11 @@
-
-
 export const navItems = [
   {
     page: "Home",
-    url: "/"
+    url: "/",
   },
   {
     page: "About Us",
-    url: "/tentang"
+    url: "/tentang",
   },
   {
     page: "Event & Class",
@@ -16,21 +14,25 @@ export const navItems = [
       {
         section: "Event",
         url: `event?section=EVENT`,
-        param: "EVENT"
+        param: "EVENT",
       },
       {
         section: "Class",
         url: `event?section=CLASS`,
-        param: "CLASS"
+        param: "CLASS",
       },
-    ]
+    ],
   },
   {
     page: "Collab with Us",
-    url: "/collab"
+    url: "/collab",
+  },
+  {
+    page: "Donation",
+    url: "/donation",
   },
   {
     page: "Contact Us",
-    url: "/contact"
+    url: "/contact",
   },
-]
+];
