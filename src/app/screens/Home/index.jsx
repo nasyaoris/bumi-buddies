@@ -1086,20 +1086,6 @@ const Home = () => {
           </ProjectContainer>
         </Box>
       </Box>
-      {/* <PartnerSection>
-        <Text
-          variant="headingLarge"
-          style={{ marginBottom: "64px", textAlign: "center" }}
-        >
-          Our Partner and Sponsor
-        </Text>
-        <PartnerContainer>
-          <img src={"/images/Rectangle.png"} alt="partner_logo" />
-          <img src={"/images/Rectangle.png"} alt="partner_logo" />
-          <img src={"/images/Rectangle.png"} alt="partner_logo" />
-          <img src={"/images/Rectangle.png"} alt="partner_logo" />
-        </PartnerContainer>
-      </PartnerSection> */}
     </Box>
   );
 };

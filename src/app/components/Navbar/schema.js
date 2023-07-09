@@ -5,7 +5,7 @@ export const navItems = [
   },
   {
     page: "About Us",
-    url: "/tentang",
+    url: "/about-us",
   },
   {
     page: "Event & Class",
