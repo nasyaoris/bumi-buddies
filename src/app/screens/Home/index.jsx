@@ -26,7 +26,7 @@ import { useRouter } from "next/router";
 import useIsMobile from "../../hooks/useIsMobile";
 import { Carousel } from "react-responsive-carousel";
 import Slider from "react-slick";
-import { Circle } from "../../components/Shapes";
+import { Circle, Rectangle } from "../../components/Shapes";
 import { environtmentalEducation } from "./schema";
 
 const jumbotronContents = [
@@ -318,6 +318,29 @@ const Home = () => {
             </Box>
           </BackgroundContainer>
         </Box>
+        <Box
+          display="flex"
+          width="100%"
+          justifyContent="center"
+          marginBottom="100px"
+        >
+          <iframe
+            width={isMobile ? "80%" : 1000}
+            height="500"
+            src="https://www.youtube.com/embed/J5NQO20uZ1I"
+          ></iframe>
+        </Box>
+
+        <Rectangle
+          size="105px"
+          background="#BB6BD9"
+          style={{
+            // position: "absolute",
+            right: "0",
+            top: isMobile ? "300px" : "640px",
+            overflow: "hidden",
+          }}
+        />
         <EnvirontmentalEducation>
           <Text
             variant="sectionTitle"
@@ -644,6 +667,7 @@ const Home = () => {
                   width: "100%",
                   position: "absolute",
                   zIndex: 2,
+                  height: "100px",
                   top: "-100px",
                   left: "-50px",
                 }}
@@ -773,8 +797,15 @@ const Home = () => {
       </Box>
 
       <ImpactContainer>
-        <Text variant="bodyLarge" style={{ marginBottom: "32px" }}>
-          Impact we made together
+        <Text
+          variant="sectionTitle"
+          marginBottom="24px"
+          style={{
+            textAlign: "left",
+            color: "white",
+          }}
+        >
+          Our Reach
         </Text>
         <ImpactItems>
           <Box
@@ -791,13 +822,15 @@ const Home = () => {
               borderRight: !isMobile ? "1px solid #FFFFFF" : "unset",
             }}
           >
-            <img
-              src={"/images/ImpactIcon.svg"}
-              alt="impactIcon"
-              style={{ width: "32px" }}
-            />
-            <Text variant="nominal">100</Text>
-            <Text variant="bodyLarge">Seminar</Text>
+            <Text variant="nominal">15+</Text>
+            <Text
+              variant="bodyLarge"
+              style={{
+                textAlign: "center",
+              }}
+            >
+              schools visited through YES Project
+            </Text>
           </Box>
           <Box
             display="flex"
@@ -813,13 +846,15 @@ const Home = () => {
               borderRight: !isMobile ? "1px solid #FFFFFF" : "unset",
             }}
           >
-            <img
-              src={"/images/ImpactIcon.svg"}
-              alt="impactIcon"
-              style={{ width: "32px" }}
-            />
-            <Text variant="nominal">100</Text>
-            <Text variant="bodyLarge">Seminar</Text>
+            <Text variant="nominal">2000+</Text>
+            <Text
+              variant="bodyLarge"
+              style={{
+                textAlign: "center",
+              }}
+            >
+              students educated through YES Project
+            </Text>
           </Box>
           <Box
             display="flex"
@@ -835,13 +870,15 @@ const Home = () => {
               borderRight: !isMobile ? "1px solid #FFFFFF" : "unset",
             }}
           >
-            <img
-              src={"/images/ImpactIcon.svg"}
-              alt="impactIcon"
-              style={{ width: "32px" }}
-            />
-            <Text variant="nominal">100</Text>
-            <Text variant="bodyLarge">Seminar</Text>
+            <Text variant="nominal">3500+</Text>
+            <Text
+              variant="bodyLarge"
+              style={{
+                textAlign: "center",
+              }}
+            >
+              followers educated through instagram
+            </Text>
           </Box>
           <Box
             display="flex"
@@ -857,13 +894,15 @@ const Home = () => {
               borderRight: !isMobile ? "1px solid #FFFFFF" : "unset",
             }}
           >
-            <img
-              src={"/images/ImpactIcon.svg"}
-              alt="impactIcon"
-              style={{ width: "32px" }}
-            />
-            <Text variant="nominal">100</Text>
-            <Text variant="bodyLarge">Seminar</Text>
+            <Text variant="nominal">20+</Text>
+            <Text
+              variant="bodyLarge"
+              style={{
+                textAlign: "center",
+              }}
+            >
+              NGOs engaged with us
+            </Text>
           </Box>
         </ImpactItems>
       </ImpactContainer>
@@ -1086,20 +1125,6 @@ const Home = () => {
           </ProjectContainer>
         </Box>
       </Box>
-      {/* <PartnerSection>
-        <Text
-          variant="headingLarge"
-          style={{ marginBottom: "64px", textAlign: "center" }}
-        >
-          Our Partner and Sponsor
-        </Text>
-        <PartnerContainer>
-          <img src={"/images/Rectangle.png"} alt="partner_logo" />
-          <img src={"/images/Rectangle.png"} alt="partner_logo" />
-          <img src={"/images/Rectangle.png"} alt="partner_logo" />
-          <img src={"/images/Rectangle.png"} alt="partner_logo" />
-        </PartnerContainer>
-      </PartnerSection> */}
     </Box>
   );
 };
