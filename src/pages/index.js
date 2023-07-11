@@ -1,1 +1,1 @@
-export { default } from "../app/screens/Tentang";
+export { default } from "../app/screens/Home";
