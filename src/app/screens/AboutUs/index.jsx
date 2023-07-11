@@ -19,6 +19,8 @@ import {
   CollabContainerMobile,
   EnvirontmentalEducation,
   EducationItem,
+  ReachContainer,
+  ReachItems,
 } from "./styles";
 import Button from "../../components/Button";
 import { useState } from "react";
@@ -273,7 +275,7 @@ const AboutUs = () => {
               {!isMobile && (
                 <Circle
                   size="36px"
-                  background="#219653"
+                  background="purple"
                   style={{
                     position: "absolute",
                     right: "200px",
@@ -370,17 +372,46 @@ const AboutUs = () => {
           </ProjectContainer>
         </Box>
       </Box>
-      <EnvirontmentalEducation>
-        <Text
-          variant="sectionTitle"
-          marginBottom="24px"
+      <EnvirontmentalEducation style={{ position: "relative" }}>
+        <img
+          src="/images/Vector4.png"
+          alt="project_sample"
           style={{
-            textAlign: "left",
-            color: "white",
+            // width: "100%",
+            position: "absolute",
+            zIndex: 2,
+            top: "-100px",
+            left: "100px",
+          }}
+        />
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "flex-start",
+            flexDirection: "column",
           }}
         >
-          Our Tagline
-        </Text>
+          <Text
+            variant="sectionTitle"
+            marginBottom="24px"
+            style={{
+              textAlign: "left",
+              color: "white",
+            }}
+          >
+            Our Tagline
+          </Text>
+          <Text
+            variant="headingMedium"
+            style={{
+              color: "white",
+            }}
+          >
+            Educate, Encourage and Act for the future
+          </Text>
+        </div>
+
         <Box
           style={{
             display: "flex",
@@ -426,26 +457,136 @@ const AboutUs = () => {
         <PartnerContainer>
           <img
             src={"/images/logo/logo4.png"}
-            style={{ height: "120px", width: "120px" }}
+            style={{ height: "120px", width: isMobile ? "120px" : "auto" }}
             alt="partner_logo"
           />
           <img
             src={"/images/logo/logo2.png"}
-            style={{ height: "120px", width: "120px" }}
+            style={{ height: "120px", width: "auto" }}
             alt="partner_logo"
           />
           <img
             src={"/images/logo/logo1.png"}
-            style={{ height: "120px", width: "120px" }}
+            style={{ height: "120px", width: isMobile ? "120px" : "auto" }}
             alt="partner_logo"
           />
           <img
             src={"/images/logo/logo3.png"}
-            style={{ height: "120px", width: "120px" }}
+            style={{ height: "120px", width: isMobile ? "120px" : "auto" }}
             alt="partner_logo"
           />
         </PartnerContainer>
       </PartnerSection>
+      <ReachContainer>
+        <Text
+          variant="sectionTitle"
+          marginBottom="24px"
+          style={{
+            textAlign: "left",
+            color: "white",
+          }}
+        >
+          Our Reach
+        </Text>
+        <ReachItems>
+          <Box
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+            style={{
+              border: "1px solid #FFFFFF",
+              padding: "16px 56px",
+              borderTop: "unset",
+              borderBottom: isMobile ? "1px solid #FFFFFF" : "unset",
+              borderLeft: "unset",
+              borderRight: !isMobile ? "1px solid #FFFFFF" : "unset",
+            }}
+          >
+            <Text variant="nominal">15+</Text>
+            <Text
+              variant="bodyLarge"
+              style={{
+                textAlign: "center",
+              }}
+            >
+              schools visited through YES Project
+            </Text>
+          </Box>
+          <Box
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+            style={{
+              border: "1px solid #FFFFFF",
+              padding: "16px 56px",
+              borderTop: "unset",
+              borderBottom: isMobile ? "1px solid #FFFFFF" : "unset",
+              borderLeft: "unset",
+              borderRight: !isMobile ? "1px solid #FFFFFF" : "unset",
+            }}
+          >
+            <Text variant="nominal">2000+</Text>
+            <Text
+              variant="bodyLarge"
+              style={{
+                textAlign: "center",
+              }}
+            >
+              students educated through YES Project
+            </Text>
+          </Box>
+          <Box
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+            style={{
+              border: "1px solid #FFFFFF",
+              padding: "16px 56px",
+              borderTop: "unset",
+              borderBottom: isMobile ? "1px solid #FFFFFF" : "unset",
+              borderLeft: "unset",
+              borderRight: !isMobile ? "1px solid #FFFFFF" : "unset",
+            }}
+          >
+            <Text variant="nominal">3500+</Text>
+            <Text
+              variant="bodyLarge"
+              style={{
+                textAlign: "center",
+              }}
+            >
+              followers educated through instagram
+            </Text>
+          </Box>
+          <Box
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+            style={{
+              border: "1px solid #FFFFFF",
+              padding: "16px 56px",
+              borderTop: "unset",
+              borderBottom: isMobile ? "1px solid #FFFFFF" : "unset",
+              borderLeft: "unset",
+              borderRight: !isMobile ? "1px solid #FFFFFF" : "unset",
+            }}
+          >
+            <Text variant="nominal">20+</Text>
+            <Text
+              variant="bodyLarge"
+              style={{
+                textAlign: "center",
+              }}
+            >
+              NGOs engaged with us
+            </Text>
+          </Box>
+        </ReachItems>
+      </ReachContainer>
     </Box>
   );
 };

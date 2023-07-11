@@ -284,7 +284,7 @@ const Donation = () => {
             </Text>
           </Box>
         </ContentContainer>
-        <PartnerSection>
+        {/* <PartnerSection>
           <PartnerContainer>
             <img src={"/images/Rectangle.png"} alt="partner_logo" />
             <img src={"/images/Rectangle.png"} alt="partner_logo" />
@@ -295,7 +295,7 @@ const Donation = () => {
             <img src={"/images/Rectangle.png"} alt="partner_logo" />
             <img src={"/images/Rectangle.png"} alt="partner_logo" />
           </PartnerContainer>
-        </PartnerSection>
+        </PartnerSection> */}
 
         {!isMobile ? (
           <ImpactContainer>

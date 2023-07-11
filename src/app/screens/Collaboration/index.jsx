@@ -65,8 +65,6 @@ const Collaboration = () => {
     );
   };
 
-  console.log("isMobile", isMobile);
-
   const NextButton = (props) => {
     const { onClick } = props;
     return (

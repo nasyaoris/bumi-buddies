@@ -126,8 +126,12 @@ export const PartnerContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "row",
   gap: "39px",
+  justifyContent: "center",
+  alignItems: "center",
   [theme.breakpoints.down("sm")]: {
     flexDirection: "column",
+    width: "100%",
+    alignItems: "center",
   },
 }));
 
@@ -177,5 +181,26 @@ export const EducationItem = styled(Box)(({ theme }) => ({
   backgroundColor: "transparent",
   [theme.breakpoints.down("sm")]: {
     width: "100%",
+  },
+}));
+
+export const ReachContainer = styled(Box)(({ theme }) => ({
+  width: "100%",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  backgroundColor: "#2BB8AB",
+  color: "#FFFF",
+  paddingTop: "39px",
+  paddingBottom: "39px",
+}));
+
+export const ReachItems = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "row",
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+    gap: "20px",
   },
 }));
