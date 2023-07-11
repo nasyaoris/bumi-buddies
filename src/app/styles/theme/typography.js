@@ -160,4 +160,19 @@ export const Typography = {
     fontSize: pxToRem(10),
     lineHeight: pxToRem(14),
   },
+  cardTitle: {
+    fontWeight: 700,
+    fontSize: pxToRem(24),
+    lineHeight: "normal",
+  },
+  cardSubheading: {
+    fontWeight: 500,
+    fontSize: pxToRem(12),
+    lineHeight: pxToRem(15),
+  },
+  cardBody: {
+    fontWeight: 400,
+    fontSize: pxToRem(14),
+    lineHeight: "normal",
+  }
 };
