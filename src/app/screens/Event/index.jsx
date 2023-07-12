@@ -19,7 +19,7 @@ import {
   CollabContainerMobile,
 } from "./styles";
 import Button from "../../components/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import useIsMobile from "../../hooks/useIsMobile";
 import { Carousel } from "react-responsive-carousel";
@@ -40,9 +40,14 @@ const jumbotronContents = [
 ];
 
 const Event = () => {
-  const [activeImage, setActiveImage] = useState(0);
-  const router = useRouter();
   const isMobile = useIsMobile();
+  const [activeImage, setActiveImage] = useState(0);
+  const [isViewMore, setIsViewMore] = useState(false);
+  const [data, setData] = useState(Array.from(Array(24)));
+  const [itemsToShow, setItemsToShow] = useState(isMobile ? 3 : 8);
+  console.log(isMobile ? 3 : 8);
+  const router = useRouter();
+  
 
   const PreviousButton = (props) => {
     const { onClick } = props;
@@ -132,6 +137,28 @@ const Event = () => {
     // ),
   };
 
+  useEffect(() => {
+    if (!isViewMore && isMobile) {
+      setItemsToShow(3);
+    } else if (!isViewMore && !isMobile) {
+      setItemsToShow(8);
+    }
+  }, [isViewMore, isMobile]);
+
+  
+
+  const showMore = () => {  
+    console.log(isViewMore);
+    console.log(isMobile ? 3 : 8);
+    if (!isViewMore) {
+      setItemsToShow(data.length);
+      setIsViewMore(true);
+    } else {
+      setItemsToShow(isMobile ? 3 : 8);
+      setIsViewMore(false);
+    }
+  }
+
   return (
     <Box sx={{ maxWidth: { sm: "100%" }, overflow: "hidden" }}>
       <Box>
@@ -195,6 +222,21 @@ const Event = () => {
             }}
           />
           </ContentContainer>
+          <ContentContainer style={{ position: "relative" }}>
+          <img
+            src="/images/Vector5.png"
+            alt="project_sample"
+            style={{
+              position: "absolute",
+              zIndex: 0,
+              // top: "-200px",
+              left: "-200px",
+              height: "587px",
+              width: "400px",
+              top: "1000px"  
+            }}
+          />
+          </ContentContainer>
         <ContentContainer>
           <Box style={{ maxWidth: "1080px" }}>
             <Text
@@ -215,9 +257,15 @@ const Event = () => {
           </Box>
         </ContentContainer>
       </Box>
-      <ContentContainer style={{ position: "relative", border: "2px solid" }}>
-        <Grid container spacing={{ xs: 2, md: 3 }} justify="center">
-        {Array.from(Array(24)).map((_, index) => (
+      {/* <h6>
+        {isViewMore ? setData(Array.from(Array(24))) :setData(data.slice(0,5))}
+        <button className="btn" onClick={() => isViewMore(!isViewMore)}>Show more</button>
+        {isViewMore ? "Show less" : "Show more"}
+      </h6> */}
+      
+      <ContentContainer style={{ position: "relative" }}>
+        <Grid container spacing={{ xs: 2, sm: 3 }} justify="center" >
+        {data.slice(0, itemsToShow).map((_, index) => (
           <Grid item xs={12} sm={4} key={index} align="center">
             <Card sx={{ maxWidth: 345 }} style={{
               background: "#fff",
@@ -250,6 +298,24 @@ const Event = () => {
           </Grid>
           ))}
         </Grid>
+        <Box style={{paddingBottom: '80px', paddingTop: '40px'}}>
+        <a className="btn btn-primary" onClick={showMore} style={{
+          color: "#2BB8AB",
+          fontFamily: "Montserrat",
+          fontSize: "18px",
+          fontStyle: "normal",
+          fontWeight: "600",
+          lineHeight: "normal",
+        }}>
+          
+      {isViewMore ? (
+        <span>Show less</span>
+          ) : (
+            <span>Show more</span>
+          )}
+        </a>
+        </Box>
+          
       </ContentContainer>
     </Box>
   );
