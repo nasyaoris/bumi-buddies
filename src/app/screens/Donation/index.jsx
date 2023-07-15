@@ -28,7 +28,7 @@ import { Circle } from "../../components/Shapes";
 
 const jumbotronContents = [
   {
-    image: "/images/donation.png",
+    image: "/images/donation-jumbotron.png",
     titleOne: "Solusi Sistem",
     titleTwo: "Keamanan Terbaik",
   },
@@ -114,20 +114,6 @@ const Donation = () => {
         ></div>
       </div>
     ),
-    // appendDots: dots => (
-    //   <div
-
-    //   >
-    //     <ul style={{ margin: "0px" }}> {dots.map((el, idx) => <li key={idx} style={{
-    //       width: "18px",
-    //       height: "18px",
-    //       background: "#D9D9D9",
-    //       borderRadius: "50%",
-    //       padding: "10px"
-    //     }}>{el}</li>)}
-    //     </ul>
-    //   </div>
-    // ),
   };
 
   return (
@@ -152,22 +138,6 @@ const Donation = () => {
                 }}
               />
             </Box>
-            {/* <Box
-              sx={{
-                position: "absolute",
-                top: "315px",
-                left: {md:"100px" , sm: "50px"  },
-                transform: "translate(-100px, -50%)",
-                zIndex: 1,
-                ml: isMobile ? "120px" : "100px",
-              }}
-            >
-              {
-                !isMobile &&  <Text variant="bodyLarge" style={{ color: theme.palette.white[100], fontSize: "96px" }}>
-                  Join our program!
-                </Text>
-              }
-            </Box> */}
           </Box>
         </JumbotronContainer>
       </Box>
@@ -300,13 +270,41 @@ const Donation = () => {
         {!isMobile ? (
           <ImpactContainer>
             <CollabContainer>
-              <Text variant="headingBig">Interested to collab with us?</Text>
+              <Text variant="headingBig">Interested to Donate?</Text>
               <Text variant="bodyLarge" style={{ width: "70%" }}>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry&apos;s standard
-                dummy text ever since the 1500s, when an unknown printer took a
-                galley of type and scrambled it to{" "}
+                Every little bit helps, and your donation can make a difference.
+                Together, we can work towards a better future for our planet.
+                Let's make a positive change for our planet and future
+                generations.
               </Text>
+              <a href="mailto:contact@bumibuddies.org">
+                <Button
+                  style={{
+                    width: "fit-content",
+                    background: "#FFFF",
+                    border: "1px solid #2BB8AB;",
+                    color: "#2BB8AB",
+                    boxShadow:
+                      "0px 3px 5px -2px rgba(0, 0, 0, 0.2), 0px 2px 3px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12)",
+                  }}
+                >
+                  Contact Us
+                </Button>
+              </a>
+            </CollabContainer>
+          </ImpactContainer>
+        ) : (
+          <CollabContainerMobile>
+            <Text variant="headingBig" style={{ lineHeight: "29px" }}>
+              Interested to Donate?
+            </Text>
+            <Text variant="bodyLarge">
+              Every little bit helps, and your donation can make a difference.
+              Together, we can work towards a better future for our planet.
+              Let's make a positive change for our planet and future
+              generations.
+            </Text>
+            <a href="mailto:contact@bumibuddies.org">
               <Button
                 style={{
                   width: "fit-content",
@@ -319,31 +317,7 @@ const Donation = () => {
               >
                 Contact Us
               </Button>
-            </CollabContainer>
-          </ImpactContainer>
-        ) : (
-          <CollabContainerMobile>
-            <Text variant="headingBig" style={{ lineHeight: "29px" }}>
-              Interested to collab with us?
-            </Text>
-            <Text variant="bodyLarge">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry&apos;s standard dummy
-              text ever since the 1500s, when an unknown printer took a galley
-              of type and scrambled it to{" "}
-            </Text>
-            <Button
-              style={{
-                width: "fit-content",
-                background: "#FFFF",
-                border: "1px solid #2BB8AB;",
-                color: "#2BB8AB",
-                boxShadow:
-                  "0px 3px 5px -2px rgba(0, 0, 0, 0.2), 0px 2px 3px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12)",
-              }}
-            >
-              Contact Us
-            </Button>
+            </a>
           </CollabContainerMobile>
         )}
       </Box>

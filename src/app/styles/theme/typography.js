@@ -174,5 +174,13 @@ export const Typography = {
     fontWeight: 400,
     fontSize: pxToRem(14),
     lineHeight: "normal",
-  }
+  },
+  subHeadingFooter: {
+    fontWeight: 600,
+    fontStyle: "normal",
+    fontSize: pxToRem(18),
+    opacity: 0.6,
+    fontFamily: "'Montserrat', sans-serif",
+    lineHeight: pxToRem(22),
+  },
 };

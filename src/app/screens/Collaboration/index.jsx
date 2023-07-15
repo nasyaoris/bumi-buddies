@@ -1,20 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import Text from "../../components/Text";
-import { Box, IconButton, Divider } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 import theme from "../../styles/theme/theme";
 import {
   JumbotronContainer,
-  Content,
   ContentContainer,
-  VisionContainer,
-  ServicesContainer,
-  ClientContainer,
   ProjectContainer,
   ProjectItem,
   ImpactContainer,
-  ImpactItems,
-  PartnerSection,
-  PartnerContainer,
   CollabContainer,
   CollabContainerMobile,
 } from "./styles";
@@ -22,8 +15,6 @@ import Button from "../../components/Button";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import useIsMobile from "../../hooks/useIsMobile";
-import { Carousel } from "react-responsive-carousel";
-import Slider from "react-slick";
 import { Circle } from "../../components/Shapes";
 
 const jumbotronContents = [
@@ -563,18 +554,20 @@ const Collaboration = () => {
                 collaboration, we can hand-in-hand to make our dream come true.
                 Hit us up for collaboration!
               </Text>
-              <Button
-                style={{
-                  width: "fit-content",
-                  background: "#FFFF",
-                  border: "1px solid #2BB8AB;",
-                  color: "#2BB8AB",
-                  boxShadow:
-                    "0px 3px 5px -2px rgba(0, 0, 0, 0.2), 0px 2px 3px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12)",
-                }}
-              >
-                Contact Us
-              </Button>
+              <a href="mailto:contact@bumibuddies.org">
+                <Button
+                  style={{
+                    width: "fit-content",
+                    background: "#FFFF",
+                    border: "1px solid #2BB8AB;",
+                    color: "#2BB8AB",
+                    boxShadow:
+                      "0px 3px 5px -2px rgba(0, 0, 0, 0.2), 0px 2px 3px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12)",
+                  }}
+                >
+                  Contact Us
+                </Button>
+              </a>
             </CollabContainer>
           </ImpactContainer>
         ) : (
@@ -588,18 +581,20 @@ const Collaboration = () => {
               hand-in-hand to make our dream come true. Hit us up for
               collaboration!
             </Text>
-            <Button
-              style={{
-                width: "fit-content",
-                background: "#FFFF",
-                border: "1px solid #2BB8AB;",
-                color: "#2BB8AB",
-                boxShadow:
-                  "0px 3px 5px -2px rgba(0, 0, 0, 0.2), 0px 2px 3px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12)",
-              }}
-            >
-              Contact Us
-            </Button>
+            <a href="mailto:contact@bumibuddies.org">
+              <Button
+                style={{
+                  width: "fit-content",
+                  background: "#FFFF",
+                  border: "1px solid #2BB8AB;",
+                  color: "#2BB8AB",
+                  boxShadow:
+                    "0px 3px 5px -2px rgba(0, 0, 0, 0.2), 0px 2px 3px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12)",
+                }}
+              >
+                Contact Us
+              </Button>
+            </a>
           </CollabContainerMobile>
         )}
       </Box>
