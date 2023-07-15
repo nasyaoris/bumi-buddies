@@ -33,8 +33,7 @@ const Event = () => {
   const [activeImage, setActiveImage] = useState(0);
   const [isViewMore, setIsViewMore] = useState(false);
   const [data, setData] = useState(Array.from(Array(24)));
-  const [itemsToShow, setItemsToShow] = useState(isMobile ? 3 : 8);
-  console.log(isMobile ? 3 : 8);
+  const [itemsToShow, setItemsToShow] = useState(isMobile ? 3 : 9);
   const router = useRouter();
 
   const PreviousButton = (props) => {
@@ -57,8 +56,6 @@ const Event = () => {
       </Box>
     );
   };
-
-  console.log("isMobile", isMobile);
 
   const NextButton = (props) => {
     const { onClick } = props;
@@ -129,18 +126,18 @@ const Event = () => {
     if (!isViewMore && isMobile) {
       setItemsToShow(3);
     } else if (!isViewMore && !isMobile) {
-      setItemsToShow(8);
+      setItemsToShow(9);
     }
   }, [isViewMore, isMobile]);
 
   const showMore = () => {
     console.log(isViewMore);
-    console.log(isMobile ? 3 : 8);
+    console.log(isMobile ? 3 : 9);
     if (!isViewMore) {
       setItemsToShow(data.length);
       setIsViewMore(true);
     } else {
-      setItemsToShow(isMobile ? 3 : 8);
+      setItemsToShow(isMobile ? 3 : 9);
       setIsViewMore(false);
     }
   };
