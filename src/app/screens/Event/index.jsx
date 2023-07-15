@@ -344,7 +344,7 @@ const Event = () => {
               lineHeight: "normal",
             }}
           >
-            {isViewMore ? <span>Show less</span> : <span>Show more</span>}
+            {isViewMore ? <span>View less</span> : <span>View more</span>}
           </a>
         </Box>
       </ContentContainer>
