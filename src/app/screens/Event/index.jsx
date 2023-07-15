@@ -342,6 +342,7 @@ const Event = () => {
               fontStyle: "normal",
               fontWeight: "600",
               lineHeight: "normal",
+              cursor: "pointer",
             }}
           >
             {isViewMore ? <span>View less</span> : <span>View more</span>}
