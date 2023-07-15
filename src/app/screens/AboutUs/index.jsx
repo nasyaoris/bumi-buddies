@@ -1,33 +1,22 @@
 /* eslint-disable @next/next/no-img-element */
 import Text from "../../components/Text";
-import { Box, IconButton, Divider } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 import theme from "../../styles/theme/theme";
 import {
   JumbotronContainer,
-  Content,
   ContentContainer,
-  VisionContainer,
-  ServicesContainer,
-  ClientContainer,
   ProjectContainer,
   ProjectItem,
-  ImpactContainer,
-  ImpactItems,
   PartnerSection,
   PartnerContainer,
-  CollabContainer,
-  CollabContainerMobile,
   EnvirontmentalEducation,
   EducationItem,
   ReachContainer,
   ReachItems,
 } from "./styles";
-import Button from "../../components/Button";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import useIsMobile from "../../hooks/useIsMobile";
-import { Carousel } from "react-responsive-carousel";
-import Slider from "react-slick";
 import { Circle } from "../../components/Shapes";
 import { taglines } from "./schema";
 
@@ -159,22 +148,6 @@ const AboutUs = () => {
                 }}
               />
             </Box>
-            {/* <Box
-              sx={{
-                position: "absolute",
-                top: "315px",
-                left: {md:"100px" , sm: "50px"  },
-                transform: "translate(-100px, -50%)",
-                zIndex: 1,
-                ml: isMobile ? "120px" : "100px",
-              }}
-            >
-              {
-                !isMobile &&  <Text variant="bodyLarge" style={{ color: theme.palette.white[100], fontSize: "96px" }}>
-                  Join our program!
-                </Text>
-              }
-            </Box> */}
           </Box>
         </JumbotronContainer>
       </Box>

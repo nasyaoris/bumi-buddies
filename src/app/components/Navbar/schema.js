@@ -31,8 +31,4 @@ export const navItems = [
     page: "Donation",
     url: "/donation",
   },
-  {
-    page: "Contact Us",
-    url: "/contact",
-  },
 ];

@@ -17,7 +17,7 @@ import { Circle } from "../../components/Shapes";
 
 const jumbotronContents = [
   {
-    image: "/images/donation.png",
+    image: "/images/event.png",
     titleOne: "Solusi Sistem",
     titleTwo: "Keamanan Terbaik",
   },
