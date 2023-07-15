@@ -1,20 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import Text from "../../components/Text";
-import { Box, IconButton, Divider } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 import theme from "../../styles/theme/theme";
+import VisibilitySensor from "react-visibility-sensor";
 import {
-  JumbotronContainer,
-  Content,
   ContentContainer,
-  VisionContainer,
-  ServicesContainer,
-  ClientContainer,
   ProjectContainer,
   ProjectItem,
   ImpactContainer,
   ImpactItems,
-  PartnerSection,
-  PartnerContainer,
   BackgroundContainer,
   Background,
   EnvirontmentalEducation,
@@ -24,10 +18,10 @@ import Button from "../../components/Button";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import useIsMobile from "../../hooks/useIsMobile";
-import { Carousel } from "react-responsive-carousel";
 import Slider from "react-slick";
 import { Circle, Rectangle } from "../../components/Shapes";
 import { environtmentalEducation } from "./schema";
+import CountUp from "react-countup";
 
 const jumbotronContents = [
   {
@@ -667,7 +661,7 @@ const Home = () => {
                   width: "100%",
                   position: "absolute",
                   zIndex: 2,
-                  height: "100px",
+                  height: "auto",
                   top: "-100px",
                   left: "-50px",
                 }}
@@ -822,7 +816,21 @@ const Home = () => {
               borderRight: !isMobile ? "1px solid #FFFFFF" : "unset",
             }}
           >
-            <Text variant="nominal">15+</Text>
+            <Text variant="nominal">
+              <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+                {({ isVisible }) => (
+                  <div>
+                    {isVisible ? (
+                      <Text variant="nominal">
+                        <CountUp end={15} />+
+                      </Text>
+                    ) : (
+                      <Text variant="nominal">0</Text>
+                    )}
+                  </div>
+                )}
+              </VisibilitySensor>
+            </Text>
             <Text
               variant="bodyLarge"
               style={{
@@ -846,7 +854,19 @@ const Home = () => {
               borderRight: !isMobile ? "1px solid #FFFFFF" : "unset",
             }}
           >
-            <Text variant="nominal">2000+</Text>
+            <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+              {({ isVisible }) => (
+                <div>
+                  {isVisible ? (
+                    <Text variant="nominal">
+                      <CountUp separator="" end={2000} />+
+                    </Text>
+                  ) : (
+                    <Text variant="nominal">0</Text>
+                  )}
+                </div>
+              )}
+            </VisibilitySensor>
             <Text
               variant="bodyLarge"
               style={{
@@ -870,7 +890,19 @@ const Home = () => {
               borderRight: !isMobile ? "1px solid #FFFFFF" : "unset",
             }}
           >
-            <Text variant="nominal">3500+</Text>
+            <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+              {({ isVisible }) => (
+                <div>
+                  {isVisible ? (
+                    <Text variant="nominal">
+                      <CountUp separator="" end={3500} />+
+                    </Text>
+                  ) : (
+                    <Text variant="nominal">0</Text>
+                  )}
+                </div>
+              )}
+            </VisibilitySensor>
             <Text
               variant="bodyLarge"
               style={{
@@ -894,7 +926,19 @@ const Home = () => {
               borderRight: !isMobile ? "1px solid #FFFFFF" : "unset",
             }}
           >
-            <Text variant="nominal">20+</Text>
+            <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+              {({ isVisible }) => (
+                <div>
+                  {isVisible ? (
+                    <Text variant="nominal">
+                      <CountUp separator="" end={20} />+
+                    </Text>
+                  ) : (
+                    <Text variant="nominal">0</Text>
+                  )}
+                </div>
+              )}
+            </VisibilitySensor>
             <Text
               variant="bodyLarge"
               style={{

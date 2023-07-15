@@ -69,7 +69,7 @@ const Navbar = (props) => {
                   sx={{
                     color:
                       router.pathname == item.url
-                        ? theme.palette.primary.orange
+                        ? "green"
                         : theme.palette.black[50],
                     marginRight: theme.spacing(6),
                     cursor: "pointer",
@@ -171,16 +171,14 @@ const Navbar = (props) => {
               {navItems?.map((item) => (
                 <Link href={item.url} key={item.url}>
                   <Text
-                    variant="bodyRegular"
+                    variant="bodyLarge"
                     sx={{
                       color:
                         router.pathname == item.url
-                          ? theme.palette.primary.orange
+                          ? "green"
                           : theme.palette.black[50],
                       marginRight: theme.spacing(6),
                       cursor: "pointer",
-                      textDecoration:
-                        router.pathname == item.url ? "underline" : "none",
                     }}
                   >
                     {item.page}

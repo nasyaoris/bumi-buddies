@@ -19,6 +19,8 @@ import { useRouter } from "next/router";
 import useIsMobile from "../../hooks/useIsMobile";
 import { Circle } from "../../components/Shapes";
 import { taglines } from "./schema";
+import CountUp from "react-countup";
+import VisibilitySensor from "react-visibility-sensor";
 
 const jumbotronContents = [
   {
@@ -361,6 +363,7 @@ const AboutUs = () => {
           style={{
             width: "100%",
             display: "flex",
+            marginLeft: !isMobile ? "70px" : "unset",
             justifyContent: "flex-start",
             flexDirection: "column",
           }}
@@ -450,6 +453,7 @@ const AboutUs = () => {
           />
         </PartnerContainer>
       </PartnerSection>
+
       <ReachContainer>
         <Text
           variant="sectionTitle"
@@ -476,7 +480,21 @@ const AboutUs = () => {
               borderRight: !isMobile ? "1px solid #FFFFFF" : "unset",
             }}
           >
-            <Text variant="nominal">15+</Text>
+            <Text variant="nominal">
+              <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+                {({ isVisible }) => (
+                  <div>
+                    {isVisible ? (
+                      <Text variant="nominal">
+                        <CountUp end={15} />+
+                      </Text>
+                    ) : (
+                      <Text variant="nominal">0</Text>
+                    )}
+                  </div>
+                )}
+              </VisibilitySensor>
+            </Text>
             <Text
               variant="bodyLarge"
               style={{
@@ -500,7 +518,19 @@ const AboutUs = () => {
               borderRight: !isMobile ? "1px solid #FFFFFF" : "unset",
             }}
           >
-            <Text variant="nominal">2000+</Text>
+            <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+              {({ isVisible }) => (
+                <div>
+                  {isVisible ? (
+                    <Text variant="nominal">
+                      <CountUp separator="" end={2000} />+
+                    </Text>
+                  ) : (
+                    <Text variant="nominal">0</Text>
+                  )}
+                </div>
+              )}
+            </VisibilitySensor>
             <Text
               variant="bodyLarge"
               style={{
@@ -524,7 +554,19 @@ const AboutUs = () => {
               borderRight: !isMobile ? "1px solid #FFFFFF" : "unset",
             }}
           >
-            <Text variant="nominal">3500+</Text>
+            <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+              {({ isVisible }) => (
+                <div>
+                  {isVisible ? (
+                    <Text variant="nominal">
+                      <CountUp separator="" end={3500} />+
+                    </Text>
+                  ) : (
+                    <Text variant="nominal">0</Text>
+                  )}
+                </div>
+              )}
+            </VisibilitySensor>
             <Text
               variant="bodyLarge"
               style={{
@@ -548,7 +590,19 @@ const AboutUs = () => {
               borderRight: !isMobile ? "1px solid #FFFFFF" : "unset",
             }}
           >
-            <Text variant="nominal">20+</Text>
+            <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+              {({ isVisible }) => (
+                <div>
+                  {isVisible ? (
+                    <Text variant="nominal">
+                      <CountUp separator="" end={20} />+
+                    </Text>
+                  ) : (
+                    <Text variant="nominal">0</Text>
+                  )}
+                </div>
+              )}
+            </VisibilitySensor>
             <Text
               variant="bodyLarge"
               style={{

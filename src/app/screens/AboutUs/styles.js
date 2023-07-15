@@ -114,7 +114,6 @@ export const PartnerSection = styled(Box)(({ theme }) => ({
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  marginTop: "120px",
   padding: "70px",
   [theme.breakpoints.down("sm")]: {
     padding: "20px",
@@ -162,7 +161,8 @@ export const EnvirontmentalEducation = styled(Box)(({ theme }) => ({
   justifyContent: "center",
   alignItems: "center",
   background: "url('/images/tagline-background.png')",
-  padding: "70px",
+  // padding: "70px",
+  paddingTop: "70px",
   flexDirection: "column",
   [theme.breakpoints.down("sm")]: {
     padding: "40px",
