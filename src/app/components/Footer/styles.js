@@ -13,18 +13,17 @@ export const FooterContainer = styled(Box)(({ theme }) => ({
   position: "relative",
   bottom: 0,
   [theme.breakpoints.down("sm")]: {
-    flex: 1
-  }
-}))
+    flex: 1,
+  },
+}));
 
 export const FooterContentBox = styled(Box)(({ theme }) => ({
   width: "90%",
   height: "auto",
-  borderBottom: `2px solid ${theme.palette.white[50]}`,
   flexDirection: "column",
   position: "relative",
   overflow: "wrap",
-}))
+}));
 
 export const InformationBox = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -35,8 +34,8 @@ export const InformationBox = styled(Box)(({ theme }) => ({
     flexDirection: "column",
     marginBottom: theme.spacing(3),
     marginBottom: theme.spacing(2),
-  }
-}))
+  },
+}));
 
 export const ShortcutContainer = styled(Box)(({ theme }) => ({
   display: "grid",
@@ -47,6 +46,6 @@ export const ShortcutContainer = styled(Box)(({ theme }) => ({
   color: "#FFFFFF",
   [theme.breakpoints.down("sm")]: {
     gridTemplateColumns: "repeat(1,1fr)",
-    marginTop: theme.spacing(2)
-  }
+    marginTop: theme.spacing(2),
+  },
 }));

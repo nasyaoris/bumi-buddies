@@ -71,7 +71,7 @@ const Footer = () => {
           </Box> */}
             <ShortcutContainer>
               {/* TODO: change to Link */}
-              <Box maxWidth="370px">
+              <Box width="100%">
                 <Text
                   variant="subHeadingFooter"
                   style={{ marginBottom: "24px" }}
@@ -100,7 +100,7 @@ const Footer = () => {
                   Collab with Us
                 </Text>
               </Box>
-              <Box maxWidth="370px">
+              <Box width="100%">
                 <Text
                   variant="subHeadingFooter"
                   style={{ marginBottom: "24px" }}
@@ -122,8 +122,8 @@ const Footer = () => {
                   </Text>
                 </a>
               </Box>
-              <Box width="370px"></Box>
-              <Box maxWidth="370px">
+              <Box width="100%"></Box>
+              <Box width="100%">
                 <Text
                   variant="subHeadingFooter"
                   style={{ marginBottom: "24px" }}
