@@ -13,6 +13,7 @@ import Button from "../../components/Button";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import useIsMobile from "../../hooks/useIsMobile";
+import { Circle } from "../../components/Shapes";
 
 const jumbotronContents = [
   {
@@ -176,36 +177,6 @@ const Event = () => {
           paddingRight: isMobile ? "20px" : "70px",
         }}
       >
-        <ContentContainer style={{ position: "relative" }}>
-          <img
-            src="/images/Vector4.png"
-            alt="project_sample"
-            style={{
-              position: "absolute",
-              zIndex: 0,
-              // top: "-200px",
-              left: "-200px",
-              height: "587px",
-              width: "400px",
-              top: "100px",
-            }}
-          />
-        </ContentContainer>
-        <ContentContainer style={{ position: "relative" }}>
-          <img
-            src="/images/Vector5.png"
-            alt="project_sample"
-            style={{
-              position: "absolute",
-              zIndex: 0,
-              // top: "-200px",
-              left: "-200px",
-              height: "587px",
-              width: "400px",
-              top: "1000px",
-            }}
-          />
-        </ContentContainer>
         <ContentContainer>
           <Box style={{ maxWidth: "1080px" }}>
             <Text
@@ -235,7 +206,69 @@ const Event = () => {
       </h6> */}
 
       <ContentContainer style={{ position: "relative" }}>
-        <Grid container spacing={{ xs: 2, sm: 3 }} justify="center">
+        <img
+          src="/images/Vector4.png"
+          alt="project_sample"
+          style={{
+            position: "absolute",
+            zIndex: 0,
+            top: "-200px",
+            left: "-100px",
+            height: "587px",
+            width: "400px",
+            // top: "100px",
+          }}
+        />
+        <img
+          src="/images/Vector5.png"
+          alt="project_sample"
+          style={{
+            position: "absolute",
+            zIndex: 1,
+            // top: "-200px",
+            left: "-50px",
+            height: "587px",
+            width: "400px",
+            top: "500px",
+          }}
+        />
+        <Circle
+          size="142px"
+          background="#56CCF2"
+          style={{
+            position: "absolute",
+            right: "400px",
+            top: "100px",
+            zIndex: 2,
+          }}
+        />
+        <Circle
+          size="30px"
+          background="#9B51E0"
+          style={{
+            position: "absolute",
+            right: "20px",
+            top: "400px",
+            zIndex: 2,
+          }}
+        />
+        {!isMobile && (
+          <img
+            src="/images/Vector6.png"
+            alt="project_sample"
+            style={{
+              position: "absolute",
+              zIndex: 1,
+              // top: "-200px",
+              right: "-50px",
+              height: "587px",
+              width: "400px",
+              top: "400px",
+            }}
+          />
+        )}
+
+        <Grid container spacing={{ xs: 2, sm: 3, lg: 1 }} justify="center">
           {data.slice(0, itemsToShow).map((_, index) => (
             <Grid item xs={12} sm={4} key={index} align="center">
               <Card
@@ -247,6 +280,7 @@ const Event = () => {
                   margin: "1rem",
                   position: "relative",
                   padding: "12px",
+                  zIndex: "2",
                 }}
               >
                 <CardMedia
