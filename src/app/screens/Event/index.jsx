@@ -207,7 +207,7 @@ const Event = () => {
 
       <ContentContainer style={{ position: "relative" }}>
         <img
-          src="/images/Vector4.png"
+          src="/images/Vector7.png"
           alt="project_sample"
           style={{
             position: "absolute",
