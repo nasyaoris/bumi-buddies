@@ -1,30 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 import Text from "../../components/Text";
-import { Box, Card, CardActions, CardMedia, CardContent, IconButton, Typography, Divider, Grid } from "@mui/material";
-import theme from "../../styles/theme/theme";
 import {
-  JumbotronContainer,
-  Content,
-  ContentContainer,
-  VisionContainer,
-  ServicesContainer,
-  ClientContainer,
-  ProjectContainer,
-  ProjectItem,
-  ImpactContainer,
-  ImpactItems,
-  PartnerSection,
-  PartnerContainer,
-  CollabContainer,
-  CollabContainerMobile,
-} from "./styles";
+  Box,
+  Card,
+  CardActions,
+  CardMedia,
+  IconButton,
+  Grid,
+} from "@mui/material";
+import { JumbotronContainer, ContentContainer } from "./styles";
 import Button from "../../components/Button";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import useIsMobile from "../../hooks/useIsMobile";
-import { Carousel } from "react-responsive-carousel";
-import Slider from "react-slick";
-import { Circle } from "../../components/Shapes";
 
 const jumbotronContents = [
   {
@@ -47,7 +35,6 @@ const Event = () => {
   const [itemsToShow, setItemsToShow] = useState(isMobile ? 3 : 8);
   console.log(isMobile ? 3 : 8);
   const router = useRouter();
-  
 
   const PreviousButton = (props) => {
     const { onClick } = props;
@@ -145,9 +132,7 @@ const Event = () => {
     }
   }, [isViewMore, isMobile]);
 
-  
-
-  const showMore = () => {  
+  const showMore = () => {
     console.log(isViewMore);
     console.log(isMobile ? 3 : 8);
     if (!isViewMore) {
@@ -157,7 +142,7 @@ const Event = () => {
       setItemsToShow(isMobile ? 3 : 8);
       setIsViewMore(false);
     }
-  }
+  };
 
   return (
     <Box sx={{ maxWidth: { sm: "100%" }, overflow: "hidden" }}>
@@ -181,22 +166,6 @@ const Event = () => {
                 }}
               />
             </Box>
-            {/* <Box
-              sx={{
-                position: "absolute",
-                top: "315px",
-                left: {md:"100px" , sm: "50px"  },
-                transform: "translate(-100px, -50%)",
-                zIndex: 1,
-                ml: isMobile ? "120px" : "100px",
-              }}
-            >
-              {
-                !isMobile &&  <Text variant="bodyLarge" style={{ color: theme.palette.white[100], fontSize: "96px" }}>
-                  Join our program!
-                </Text>
-              }
-            </Box> */}
           </Box>
         </JumbotronContainer>
       </Box>
@@ -218,11 +187,11 @@ const Event = () => {
               left: "-200px",
               height: "587px",
               width: "400px",
-              top: "100px"  
+              top: "100px",
             }}
           />
-          </ContentContainer>
-          <ContentContainer style={{ position: "relative" }}>
+        </ContentContainer>
+        <ContentContainer style={{ position: "relative" }}>
           <img
             src="/images/Vector5.png"
             alt="project_sample"
@@ -233,10 +202,10 @@ const Event = () => {
               left: "-200px",
               height: "587px",
               width: "400px",
-              top: "1000px"  
+              top: "1000px",
             }}
           />
-          </ContentContainer>
+        </ContentContainer>
         <ContentContainer>
           <Box style={{ maxWidth: "1080px" }}>
             <Text
@@ -249,10 +218,12 @@ const Event = () => {
               variant="bodyLarge"
               style={{ textAlign: "center", color: "#111111" }}
             >
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-              when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-              It has survived not only five centuries, but also the leap into electronic typesetting.
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting.
             </Text>
           </Box>
         </ContentContainer>
@@ -262,60 +233,86 @@ const Event = () => {
         <button className="btn" onClick={() => isViewMore(!isViewMore)}>Show more</button>
         {isViewMore ? "Show less" : "Show more"}
       </h6> */}
-      
+
       <ContentContainer style={{ position: "relative" }}>
-        <Grid container spacing={{ xs: 2, sm: 3 }} justify="center" >
-        {data.slice(0, itemsToShow).map((_, index) => (
-          <Grid item xs={12} sm={4} key={index} align="center">
-            <Card sx={{ maxWidth: 345 }} style={{
-              background: "#fff",
-              borderRadius: "8px",
-              display: "inline-block",
-              margin: "1rem",
-              position: "relative",
-              padding: "12px"
-            }}>
-              <CardMedia
-                sx={{ height: 140 }}
-                image="/images/Rectangle.png"
-                title="rectangle"
-              />
-              <div style={{ display: "flex", gap: '8px', flexDirection: "column", marginTop: "8px" }}>
-                <Text variant="cardTitle" style={{color: "#000"}}>
-                  Title
-                </Text>
-                <Text variant="cardSubheading" style={{color: "#2BB8AB"}}>
-                  Minggu, 22 Januari 2023 13:00 WIB
-                </Text>
-                <Text variant="cardBody" style={{color: "#4F4F4F"}}>
-                  LLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
-                </Text>
-              </div>
-              <CardActions>
-                <Button size="medium" style={{backgroundColor: "#B5CF50"}} sx={{ width: 345, padding: 1, margin: 2 }}>Submit</Button>
-              </CardActions>
-            </Card>
-          </Grid>
+        <Grid container spacing={{ xs: 2, sm: 3 }} justify="center">
+          {data.slice(0, itemsToShow).map((_, index) => (
+            <Grid item xs={12} sm={4} key={index} align="center">
+              <Card
+                sx={{ maxWidth: 345 }}
+                style={{
+                  background: "#fff",
+                  borderRadius: "8px",
+                  display: "inline-block",
+                  margin: "1rem",
+                  position: "relative",
+                  padding: "12px",
+                }}
+              >
+                <CardMedia
+                  sx={{ height: 140 }}
+                  image="/images/Rectangle.png"
+                  title="rectangle"
+                />
+                <div
+                  style={{
+                    display: "flex",
+                    gap: "8px",
+                    flexDirection: "column",
+                    marginTop: "8px",
+                    justifyContent: "flex-start",
+                  }}
+                >
+                  <Text
+                    variant="cardTitle"
+                    style={{ color: "#000", textAlign: "left" }}
+                  >
+                    Title
+                  </Text>
+                  <Text
+                    variant="cardSubheading"
+                    style={{ color: "#2BB8AB", textAlign: "left" }}
+                  >
+                    Minggu, 22 Januari 2023 13:00 WIB
+                  </Text>
+                  <Text
+                    variant="cardBody"
+                    style={{ color: "#4F4F4F", textAlign: "left" }}
+                  >
+                    LLorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an
+                  </Text>
+                </div>
+                <CardActions sx={{ padding: "unset", marginTop: 2 }}>
+                  <Button
+                    size="large"
+                    style={{ backgroundColor: "#B5CF50" }}
+                    sx={{ width: "100%" }}
+                  >
+                    Daftar
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
           ))}
         </Grid>
-        <Box style={{paddingBottom: '80px', paddingTop: '40px'}}>
-        <a className="btn btn-primary" onClick={showMore} style={{
-          color: "#2BB8AB",
-          fontFamily: "Montserrat",
-          fontSize: "18px",
-          fontStyle: "normal",
-          fontWeight: "600",
-          lineHeight: "normal",
-        }}>
-          
-      {isViewMore ? (
-        <span>Show less</span>
-          ) : (
-            <span>Show more</span>
-          )}
-        </a>
+        <Box style={{ paddingBottom: "80px", paddingTop: "40px" }}>
+          <a
+            className="btn btn-primary"
+            onClick={showMore}
+            style={{
+              color: "#2BB8AB",
+              fontFamily: "Montserrat",
+              fontSize: "18px",
+              fontStyle: "normal",
+              fontWeight: "600",
+              lineHeight: "normal",
+            }}
+          >
+            {isViewMore ? <span>Show less</span> : <span>Show more</span>}
+          </a>
         </Box>
-          
       </ContentContainer>
     </Box>
   );
