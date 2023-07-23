@@ -134,6 +134,8 @@ const Home = () => {
       <Box style={{ zIndex: 1, height: isMobile ? "300px" : "unset" }}>
         <Slider
           {...settings}
+          autoplay
+          infinite
           style={{ zIndex: 1, height: isMobile ? "300px" : "unset" }}
         >
           {jumbotronContents.map((el, idx) => {
