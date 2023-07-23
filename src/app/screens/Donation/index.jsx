@@ -277,7 +277,7 @@ const Donation = () => {
                 Let's make a positive change for our planet and future
                 generations.
               </Text>
-              <a href="mailto:contact@bumibuddies.org">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLScu0bzJSCpLoidDGK5JC2WovYwsa5Ka_CpQSpMji8-sS2a_Qg/viewform?usp=sf_link">
                 <Button
                   style={{
                     width: "fit-content",
@@ -288,7 +288,7 @@ const Donation = () => {
                       "0px 3px 5px -2px rgba(0, 0, 0, 0.2), 0px 2px 3px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12)",
                   }}
                 >
-                  Contact Us
+                  Donate
                 </Button>
               </a>
             </CollabContainer>
@@ -304,7 +304,7 @@ const Donation = () => {
               Let's make a positive change for our planet and future
               generations.
             </Text>
-            <a href="mailto:contact@bumibuddies.org">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScu0bzJSCpLoidDGK5JC2WovYwsa5Ka_CpQSpMji8-sS2a_Qg/viewform?usp=sf_link">
               <Button
                 style={{
                   width: "fit-content",
@@ -315,7 +315,7 @@ const Donation = () => {
                     "0px 3px 5px -2px rgba(0, 0, 0, 0.2), 0px 2px 3px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12)",
                 }}
               >
-                Contact Us
+                Donate
               </Button>
             </a>
           </CollabContainerMobile>

@@ -185,7 +185,7 @@ const Navbar = (props) => {
                   </Text>
                 </Link>
               ))}
-              <a href="mailto:contact@bumibuddies.org">
+              <a href="https://api.whatsapp.com/send?phone=15551234567">
                 <Text
                   variant="h4Small"
                   sx={{
@@ -197,7 +197,7 @@ const Navbar = (props) => {
                   Contact Us
                 </Text>
               </a>
-              <a href="mailto:contact@bumibuddies.org">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLScu0bzJSCpLoidDGK5JC2WovYwsa5Ka_CpQSpMji8-sS2a_Qg/viewform?usp=sf_link">
                 <Button style={{ backgroundColor: "#B5CF50" }}>
                   <Text variant="bodyMedium">Donate</Text>
                 </Button>

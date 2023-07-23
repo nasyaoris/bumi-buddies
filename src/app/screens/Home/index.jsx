@@ -648,7 +648,9 @@ const Home = () => {
                       marginTop: "24px",
                     }}
                   >
-                    <Text variant="bodyMedium">Contact Us</Text>
+                    <a href="mailto:contact@bumibuddies.org">
+                      <Text variant="bodyMedium">Contact Us</Text>
+                    </a>
                   </Button>
                 </Box>
               </Box>

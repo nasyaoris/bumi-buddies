@@ -57,7 +57,7 @@ const Footer = () => {
 
   return (
     <FooterContainer>
-      <FooterContentBox borderBottom={1}>
+      <FooterContentBox>
         {/* <FadeUp>
         <img src="/images/logoAnagataWhite.svg" alt="logo" style={{height: isMobile? "40px" : "71px"}} />
       </FadeUp> */}
@@ -147,12 +147,12 @@ const Footer = () => {
                 >
                   Others
                 </Text>
-                <Text variant="bodyLarge" style={{ marginBottom: "24px" }}>
-                  Terms and Conditions
-                </Text>
-                <Text variant="bodyLarge" style={{ marginBottom: "24px" }}>
-                  F.A.Q
-                </Text>
+
+                <a href="https://drive.google.com/drive/folders/1SQPBjwrItHb4vbxY2cRzHw5Po-GeMvy8?usp=sharing">
+                  <Text variant="bodyLarge" style={{ marginBottom: "24px" }}>
+                    F.A.Q
+                  </Text>
+                </a>
               </Box>
               {/* {
               shortcuts.map((el, idx) => (

@@ -286,7 +286,9 @@ const Collaboration = () => {
                       marginTop: "24px",
                     }}
                   >
-                    <Text variant="bodyMedium">Arrange Session</Text>
+                    <a href="https://linktr.ee/bumibuddies">
+                      <Text variant="bodyMedium">Arrange Session</Text>
+                    </a>
                   </Button>
                   {/* <ul>
                     <li>
@@ -394,7 +396,9 @@ const Collaboration = () => {
                       marginTop: "24px",
                     }}
                   >
-                    <Text variant="bodyMedium">Contact Us</Text>
+                    <a href="mailto:contact@bumibuddies.org">
+                      <Text variant="bodyMedium">Contact Us</Text>
+                    </a>
                   </Button>
                   {/* <ul>
                     <li>
@@ -526,7 +530,9 @@ const Collaboration = () => {
                       marginTop: "24px",
                     }}
                   >
-                    <Text variant="bodyMedium">Find Out More</Text>
+                    <a href="https://linktr.ee/bumibuddies">
+                      <Text variant="bodyMedium">Find Out More</Text>
+                    </a>
                   </Button>
                   {/* <ul>
                     <li>
