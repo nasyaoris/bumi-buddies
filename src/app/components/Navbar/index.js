@@ -185,7 +185,7 @@ const Navbar = (props) => {
                   </Text>
                 </Link>
               ))}
-              <a href="https://api.whatsapp.com/send?phone=15551234567">
+              <a href="https://api.whatsapp.com/send?phone=6285163590281">
                 <Text
                   variant="h4Small"
                   sx={{
