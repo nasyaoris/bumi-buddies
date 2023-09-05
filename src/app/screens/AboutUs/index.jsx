@@ -14,13 +14,15 @@ import {
   ReachContainer,
   ReachItems,
 } from "./styles";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import useIsMobile from "../../hooks/useIsMobile";
 import { Circle } from "../../components/Shapes";
 import { taglines } from "./schema";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
+import { baseUrl } from "../../../utils/baseApi";
+import axios from "axios";
 
 const jumbotronContents = [
   {
@@ -39,6 +41,27 @@ const AboutUs = () => {
   const [activeImage, setActiveImage] = useState(0);
   const router = useRouter();
   const isMobile = useIsMobile();
+
+  const [jumbotrons, setJumbotrons] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://api.bumibuddies.org/api/jumbotrons", {
+        params: {
+          populate: "*",
+        },
+      })
+      .then(function (response) {
+        const homePageJumbotrons = response.data.data.filter(
+          (el) => el.attributes.page === "about"
+        );
+        setJumbotrons(homePageJumbotrons);
+        console.log(homePageJumbotrons);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
 
   const PreviousButton = (props) => {
     const { onClick } = props;
@@ -60,8 +83,6 @@ const AboutUs = () => {
       </Box>
     );
   };
-
-  console.log("isMobile", isMobile);
 
   const NextButton = (props) => {
     const { onClick } = props;
@@ -142,10 +163,10 @@ const AboutUs = () => {
           >
             <Box>
               <img
-                src={jumbotronContents[activeImage].image}
+                src={`${baseUrl}${jumbotrons[0]?.attributes.image.data[0].attributes.formats.medium.url}`}
                 alt="background_1"
                 style={{
-                  width: isMobile ? "100%" : "unset",
+                  width: "100%",
                   height: "100%",
                 }}
               />
@@ -194,6 +215,17 @@ const AboutUs = () => {
                 marginBottom: isMobile ? "60px" : "unset",
               }}
             >
+              <img
+                src="/images/Vector4.png"
+                alt="project_sample"
+                style={{
+                  // width: "100%",
+                  position: "absolute",
+                  zIndex: 2,
+                  top: "-100px",
+                  right: "-600px",
+                }}
+              />
               <Box
                 display="flex"
                 flexDirection="column"

@@ -126,7 +126,7 @@ const Navbar = (props) => {
           }}
         >
           <ListItemButton sx={{ textAlign: "left" }}>
-            <a href="mailto:contact@bumibuddies.org">
+            <a href="https://api.whatsapp.com/send?phone=6285163590281">
               <Text
                 variant="h4Small"
                 sx={{

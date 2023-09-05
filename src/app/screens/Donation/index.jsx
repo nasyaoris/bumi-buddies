@@ -19,12 +19,14 @@ import {
   CollabContainerMobile,
 } from "./styles";
 import Button from "../../components/Button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import useIsMobile from "../../hooks/useIsMobile";
 import { Carousel } from "react-responsive-carousel";
 import Slider from "react-slick";
 import { Circle } from "../../components/Shapes";
+import { baseUrl } from "../../../utils/baseApi";
+import axios from "axios";
 
 const jumbotronContents = [
   {
@@ -43,6 +45,27 @@ const Donation = () => {
   const [activeImage, setActiveImage] = useState(0);
   const router = useRouter();
   const isMobile = useIsMobile();
+
+  const [jumbotrons, setJumbotrons] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://api.bumibuddies.org/api/jumbotrons", {
+        params: {
+          populate: "*",
+        },
+      })
+      .then(function (response) {
+        const homePageJumbotrons = response.data.data.filter(
+          (el) => el.attributes.page === "donation"
+        );
+        setJumbotrons(homePageJumbotrons);
+        console.log(homePageJumbotrons);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
 
   const PreviousButton = (props) => {
     const { onClick } = props;
@@ -130,10 +153,10 @@ const Donation = () => {
           >
             <Box>
               <img
-                src={jumbotronContents[activeImage].image}
+                src={`${baseUrl}${jumbotrons[0]?.attributes.image.data[0].attributes.formats.medium.url}`}
                 alt="background_1"
                 style={{
-                  width: isMobile ? "100%" : "unset",
+                  width: "100%",
                   height: "100%",
                 }}
               />
