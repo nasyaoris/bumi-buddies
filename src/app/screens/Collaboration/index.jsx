@@ -12,10 +12,12 @@ import {
   CollabContainerMobile,
 } from "./styles";
 import Button from "../../components/Button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import useIsMobile from "../../hooks/useIsMobile";
 import { Circle } from "../../components/Shapes";
+import { baseUrl } from "../../../utils/baseApi";
+import axios from "axios";
 
 const jumbotronContents = [
   {
@@ -34,6 +36,26 @@ const Collaboration = () => {
   const [activeImage, setActiveImage] = useState(0);
   const router = useRouter();
   const isMobile = useIsMobile();
+  const [jumbotrons, setJumbotrons] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://api.bumibuddies.org/api/jumbotrons", {
+        params: {
+          populate: "*",
+        },
+      })
+      .then(function (response) {
+        const homePageJumbotrons = response.data.data.filter(
+          (el) => el.attributes.page === "collab"
+        );
+        setJumbotrons(homePageJumbotrons);
+        console.log(homePageJumbotrons);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
 
   const PreviousButton = (props) => {
     const { onClick } = props;
@@ -135,10 +157,10 @@ const Collaboration = () => {
           >
             <Box>
               <img
-                src={jumbotronContents[activeImage].image}
+                src={`${baseUrl}${jumbotrons[0]?.attributes.image.data[0].attributes.formats.medium.url}`}
                 alt="background_1"
                 style={{
-                  width: isMobile ? "100%" : "unset",
+                  width: "100%",
                   height: "100%",
                 }}
               />
@@ -225,14 +247,14 @@ const Collaboration = () => {
                 marginBottom: isMobile ? "250px" : "unset",
               }}
             >
-              <Box>
+              <Box style={{ marginTop: "30px" }}>
                 <Circle
                   size="46px"
                   background="#F2C94C"
                   style={{
                     position: "absolute",
                     left: "-10px",
-                    top: "-10px",
+                    top: "20px",
                     zIndex: 2,
                   }}
                 />
@@ -312,14 +334,14 @@ const Collaboration = () => {
                 marginBottom: isMobile ? "250px" : "unset",
               }}
             >
-              <Box>
+              <Box style={{ marginTop: "30px" }}>
                 <Circle
                   size="46px"
                   background="#BB6BD9"
                   style={{
                     position: "absolute",
                     left: "-10px",
-                    top: "-10px",
+                    top: "20px",
                     zIndex: 2,
                   }}
                 />
@@ -462,14 +484,14 @@ const Collaboration = () => {
                 marginBottom: isMobile ? "250px" : "unset",
               }}
             >
-              <Box>
+              <Box style={{ marginTop: "30px" }}>
                 <Circle
                   size="46px"
                   background="#F2C94C"
                   style={{
                     position: "absolute",
                     left: "-10px",
-                    top: "-10px",
+                    top: "20px",
                     zIndex: 2,
                   }}
                 />

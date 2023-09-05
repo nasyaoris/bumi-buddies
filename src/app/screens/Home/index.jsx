@@ -15,13 +15,15 @@ import {
   EducationItem,
 } from "./styles";
 import Button from "../../components/Button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import useIsMobile from "../../hooks/useIsMobile";
 import Slider from "react-slick";
 import { Circle, Rectangle } from "../../components/Shapes";
 import { environtmentalEducation } from "./schema";
 import CountUp from "react-countup";
+import axios from "axios";
+import { baseUrl } from "../../../utils/baseApi";
 
 const jumbotronContents = [
   {
@@ -42,6 +44,26 @@ const Home = () => {
   const [activeImage, setActiveImage] = useState(0);
   const router = useRouter();
   const isMobile = useIsMobile();
+  const [jumbotrons, setJumbotrons] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://api.bumibuddies.org/api/jumbotrons", {
+        params: {
+          populate: "*",
+        },
+      })
+      .then(function (response) {
+        const homePageJumbotrons = response.data.data.filter(
+          (el) => el.attributes.page === "home"
+        );
+        setJumbotrons(homePageJumbotrons);
+        console.log(homePageJumbotrons);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
 
   const PreviousButton = (props) => {
     const { onClick } = props;
@@ -138,7 +160,7 @@ const Home = () => {
           infinite
           style={{ zIndex: 1, height: isMobile ? "300px" : "unset" }}
         >
-          {jumbotronContents.map((el, idx) => {
+          {jumbotrons.map((el, idx) => {
             return (
               <Box
                 key={idx}
@@ -155,10 +177,10 @@ const Home = () => {
                   }}
                 >
                   <img
-                    src={el.image}
+                    src={`${baseUrl}${el.attributes.image.data[0].attributes.formats.large.url}`}
                     alt="background_1"
                     style={{
-                      width: isMobile ? "100%" : "unset",
+                      width: "100%",
                       height: "100%",
                     }}
                   />
@@ -182,7 +204,7 @@ const Home = () => {
                       maxWidth: "639px",
                     }}
                   >
-                    {el.titleOne}
+                    {el.attributes.title}
                   </Text>
 
                   <Text
@@ -192,7 +214,7 @@ const Home = () => {
                       maxWidth: "639px",
                     }}
                   >
-                    {el.titleTwo}
+                    {el.attributes.description}
                   </Text>
                 </Box>
               </Box>
@@ -494,14 +516,14 @@ const Home = () => {
                 marginBottom: isMobile ? "250px" : "unset",
               }}
             >
-              <Box>
+              <Box style={{ marginTop: "30px" }}>
                 <Circle
                   size="46px"
                   background="#F2C94C"
                   style={{
                     position: "absolute",
                     left: "-10px",
-                    top: "-10px",
+                    top: "20px",
                     zIndex: 2,
                   }}
                 />
@@ -579,14 +601,14 @@ const Home = () => {
                 marginBottom: isMobile ? "250px" : "unset",
               }}
             >
-              <Box>
+              <Box style={{ marginTop: "30px" }}>
                 <Circle
                   size="46px"
                   background="#BB6BD9"
                   style={{
                     position: "absolute",
                     left: "-10px",
-                    top: "-10px",
+                    top: "20px",
                     zIndex: 2,
                   }}
                 />
@@ -706,14 +728,14 @@ const Home = () => {
                 marginBottom: isMobile ? "250px" : "unset",
               }}
             >
-              <Box>
+              <Box style={{ marginTop: "30px" }}>
                 <Circle
                   size="46px"
                   background="#F2C94C"
                   style={{
                     position: "absolute",
                     left: "-10px",
-                    top: "-10px",
+                    top: "20px",
                     zIndex: 2,
                   }}
                 />
@@ -1118,7 +1140,7 @@ const Home = () => {
                 src={
                   isMobile
                     ? "/images/past-work-mobile.png"
-                    : "/images/past-work.png"
+                    : "/images/more-love.png"
                 }
                 alt="project_sample"
                 style={{ width: "100%", position: "relative", zIndex: 3 }}
@@ -1134,8 +1156,25 @@ const Home = () => {
                 <Box
                   display="flex"
                   flexDirection="column"
-                  style={{ position: "absolute", zIndex: 3 }}
+                  style={{
+                    position: "absolute",
+                    zIndex: 3,
+                    height: "100%",
+                    justifyContent: "center",
+                  }}
                 >
+                  <img
+                    src="/images/Vector3.png"
+                    alt="project_sample"
+                    style={{
+                      position: "absolute",
+                      zIndex: 0,
+                      // top: "-200px",
+                      right: "-200px",
+                      height: "387px",
+                      width: "400px",
+                    }}
+                  />
                   <Text
                     variant="titleMedium"
                     style={{
@@ -1146,12 +1185,20 @@ const Home = () => {
                   </Text>
                   <Text
                     variant="bodyLarge"
-                    style={{ color: theme.palette.gray[200] }}
+                    style={{ color: theme.palette.gray[200], zIndex: 1 }}
                   >
                     One of our biggest themes in 2021 was to waste less but
                     share more love. This program is targeted for Indonesian
-                    youths and adults, to raise awareness of issues surrounding
-                    waste management and how it connects to climate change. 
+                    youths and adults,{" "}
+                    <span
+                      style={{
+                        color: theme.palette.blue[200],
+                        fontWeight: "600",
+                      }}
+                    >
+                      to raise awareness of issues surrounding waste management
+                      and how it connects to climate change. 
+                    </span>
                   </Text>
                   <Text
                     variant="bodyLarge"
@@ -1160,10 +1207,29 @@ const Home = () => {
                       marginTop: "24px",
                     }}
                   >
-                    The activities that we did under this project ranged from
-                    less-waste in-person workshops, webinar series on less-waste
-                    lifestyle, and workshops on creating art and craft using
-                    waste. We also offer a course about Climate Change and
+                    The
+                    <span
+                      style={{
+                        color: theme.palette.blue[200],
+                        fontWeight: "600",
+                      }}
+                    >
+                      {" "}
+                      activities{" "}
+                    </span>{" "}
+                    that we did under this project ranged from
+                    <span
+                      style={{
+                        color: theme.palette.blue[200],
+                        fontWeight: "600",
+                      }}
+                    >
+                      {" "}
+                      less-waste in-person workshops, webinar series on
+                      less-waste lifestyle, and workshops on creating art and
+                      craft using waste.{" "}
+                    </span>{" "}
+                    We also offer a course about Climate Change and
                     Sustainability, working together with GY4ES (Global Youth
                     for Environment and Sustainability) India.
                   </Text>

@@ -14,6 +14,9 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import useIsMobile from "../../hooks/useIsMobile";
 import { Circle } from "../../components/Shapes";
+import axios from "axios";
+import { baseUrl } from "../../../utils/baseApi";
+import { format, parseISO } from "date-fns";
 
 const jumbotronContents = [
   {
@@ -33,8 +36,85 @@ const Event = () => {
   const [activeImage, setActiveImage] = useState(0);
   const [isViewMore, setIsViewMore] = useState(false);
   const [data, setData] = useState(Array.from(Array(24)));
+  const [eventPageDesc, setEventPageDesc] = useState({
+    title: "",
+    description: "",
+  });
   const [itemsToShow, setItemsToShow] = useState(isMobile ? 3 : 9);
   const router = useRouter();
+
+  const [jumbotrons, setJumbotrons] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://api.bumibuddies.org/api/jumbotrons", {
+        params: {
+          populate: "*",
+        },
+      })
+      .then(function (response) {
+        const homePageJumbotrons = response.data.data.filter(
+          (el) => el.attributes.page === "event"
+        );
+        setJumbotrons(homePageJumbotrons);
+        console.log(homePageJumbotrons);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+    axios
+      .get("https://api.bumibuddies.org/api/events", {
+        params: {
+          populate: "*",
+        },
+      })
+      .then(function (response) {
+        const events = response.data.data.map((el) => {
+          // const parsedDate = toDate(el.attributes.datetime, {
+          //   timeZone: "Asia/Bangkok",
+          // });
+          // const bangkokDate = utcToZonedTime(parsedDate, "Asia/Bangkok");
+          // format(bangkokDate, "eeee , cc LLLL yyyy", {
+          //   timeZone: "Asia/Bangkok",
+          // }); // 2014-10-25 13:46:20+07:00
+          const formattedDate = format(
+            parseISO(el.attributes.datetime),
+            "eeee, cc LLLL yyyy HH:mm"
+          );
+          return {
+            title: el.attributes.title,
+            description: el.attributes.description,
+            formLink: el.attributes.formLink,
+            date: formattedDate,
+            image: el.attributes.images.data[0].attributes.formats.small.url,
+          };
+        });
+        setData(events);
+        console.log(events);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+    axios
+      .get("https://api.bumibuddies.org/api/event-title", {
+        params: {
+          populate: "*",
+        },
+      })
+      .then(function (response) {
+        const eventData = {
+          title: response.data.data.attributes.title,
+          description: response.data.data.attributes.description,
+        };
+        setEventPageDesc(eventData);
+        console.log(eventData);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
 
   const PreviousButton = (props) => {
     const { onClick } = props;
@@ -156,10 +236,10 @@ const Event = () => {
           >
             <Box>
               <img
-                src={jumbotronContents[activeImage].image}
+                src={`${baseUrl}${jumbotrons[0]?.attributes.image.data[0].attributes.formats.large.url}`}
                 alt="background_1"
                 style={{
-                  width: isMobile ? "100%" : "unset",
+                  width: "100%",
                   height: "100%",
                 }}
               />
@@ -180,18 +260,13 @@ const Event = () => {
               variant="sectionTitle"
               style={{ textAlign: "center", marginBottom: "32px" }}
             >
-              Title Introduction
+              {eventPageDesc?.title}
             </Text>
             <Text
               variant="bodyLarge"
               style={{ textAlign: "center", color: "#111111" }}
             >
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting.
+              {eventPageDesc?.description}
             </Text>
           </Box>
         </ContentContainer>
@@ -266,7 +341,7 @@ const Event = () => {
         )}
 
         <Grid container spacing={{ xs: 2, sm: 3, lg: 1 }} justify="center">
-          {data.slice(0, itemsToShow).map((_, index) => (
+          {data.slice(0, itemsToShow).map((el, index) => (
             <Grid item xs={12} sm={4} key={index} align="center">
               <Card
                 sx={{ maxWidth: 345 }}
@@ -282,7 +357,7 @@ const Event = () => {
               >
                 <CardMedia
                   sx={{ height: 140 }}
-                  image="/images/Rectangle.png"
+                  image={`${baseUrl}${el?.image}`}
                   title="rectangle"
                 />
                 <div
@@ -298,31 +373,31 @@ const Event = () => {
                     variant="cardTitle"
                     style={{ color: "#000", textAlign: "left" }}
                   >
-                    Title
+                    {el?.title}
                   </Text>
                   <Text
                     variant="cardSubheading"
                     style={{ color: "#2BB8AB", textAlign: "left" }}
                   >
-                    Minggu, 22 Januari 2023 13:00 WIB
+                    {el?.date} WIB
                   </Text>
                   <Text
                     variant="cardBody"
                     style={{ color: "#4F4F4F", textAlign: "left" }}
                   >
-                    LLorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an
+                    {el?.description}
                   </Text>
                 </div>
                 <CardActions sx={{ padding: "unset", marginTop: 2 }}>
-                  <Button
-                    size="large"
-                    style={{ backgroundColor: "#B5CF50" }}
-                    sx={{ width: "100%" }}
-                  >
-                    Daftar
-                  </Button>
+                  <a href={el?.formLink} style={{ width: "100%" }}>
+                    <Button
+                      size="large"
+                      style={{ backgroundColor: "#B5CF50" }}
+                      sx={{ width: "100%" }}
+                    >
+                      Daftar
+                    </Button>
+                  </a>
                 </CardActions>
               </Card>
             </Grid>

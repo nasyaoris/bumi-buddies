@@ -107,9 +107,11 @@ const Footer = () => {
                 >
                   Whatsapp
                 </Text>
-                <Text variant="bodyLarge" style={{ marginBottom: "24px" }}>
-                  +62 851-6359-0281
-                </Text>
+                <a href="https://api.whatsapp.com/send?phone=6285163590281">
+                  <Text variant="bodyLarge" style={{ marginBottom: "24px" }}>
+                    +62 851-6359-0281
+                  </Text>
+                </a>
                 <Text
                   variant="subHeadingFooter"
                   style={{ marginBottom: "24px" }}
@@ -137,8 +139,9 @@ const Footer = () => {
                     style={{ marginRight: "8px" }}
                   />
                 </a>
-
-                <img src={"/images/linkedin.svg"} alt="linkedin" />
+                <a href="https://www.linkedin.com/company/bumi-buddies/">
+                  <img src={"/images/linkedin.svg"} alt="linkedin" />
+                </a>
               </Box>
               <Box maxWidth="370px">
                 <Text
